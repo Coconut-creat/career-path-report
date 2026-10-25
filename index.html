@@ -730,74 +730,97 @@ th{ color:var(--secondary); font-weight:600; font-size:13px; background:var(--bg
 
 <!-- 05c LinkedIn 独立数据源 -->
 <section>
-  <h2 class="sec"><span class="no">05c</span>LinkedIn 独立复核：703 条在招岗位，补上 JobsDB 的两个盲区</h2>
-  <p class="sec-sub">采集时间 2026-10-25 16:47:02，地点香港，703 条去重岗位（8 条路径 × 2 关键词 × 2 页，免登录公开搜索页）。这一节的价值不是「更多数据」，而是<b>修正 JobsDB 的两个结构性盲区</b>：① 猎头代发导致雇主未知；② 投研线（P8/P9）被分类口径排除在外。</p>
+  <h2 class="sec"><span class="no">05c</span>LinkedIn 独立复核：703 条在招岗位，481 条进入路径口径</h2>
+  <p class="sec-sub">采集时间 2026-10-25 16:47:02，地点香港，8 条路径 × 2 关键词 × 2 页，免登录公开搜索页，去重后 703 条。二次筛选结果：<b>有效 481 条（68.4%）</b>，明确排除 121 条，仅标题无法判职能 101 条（14.4%，不强行归类）。这一节的价值不是「更多数据」，而是补上 JobsDB 的两个结构性盲区：① 猎头代发导致雇主未知；② 投研线（P8/P9）被分类口径排除在外。</p>
 
   <div class="chart">
-    <h4>数据质量对照：LinkedIn vs JobsDB</h4>
+    <h4>筛选漏斗与口径（一岗一路径，主标签计数）</h4>
     <table>
-      <tr><th>指标</th><th>LinkedIn（703 条）</th><th>JobsDB（281 条）</th><th>含义</th></tr>
-      <tr><td>岗位标题可解析</td><td>100.0%</td><td>100%</td><td>两者都完整</td></tr>
-      <tr><td>雇主名称可解析</td><td>100.0%</td><td>100%（但含猎头代发）</td><td>LinkedIn 的雇主是<b>真实雇主</b></td></tr>
-      <tr><td><b>猎头代发占比</b></td><td><b>11.1%</b></td><td><b>41%</b></td><td>LinkedIn 雇主可见性显著更高</td></tr>
-      <tr><td>薪资可解析</td><td>0.0%（几乎全部不标）</td><td>57%</td><td><b>薪资仍以 JobsDB 为准</b>，LinkedIn 不用于薪资分位</td></tr>
+      <tr><th>环节</th><th>条数</th><th>口径说明</th></tr>
+      <tr><td>采集去重</td><td>703</td><td>8 路径 × 2 关键词 × 2 页</td></tr>
+      <tr><td>明确排除</td><td>121</td><td>IT/工程/开发 46、非金融行业 40、纯财务/核算 25、市场/PR/HR 5、法务/合规/行政 4、零售/保险销售 1</td></tr>
+      <tr><td>标题无法判职能</td><td>101</td><td>如 COO / Business Enablement / Client Fund Management，不猜测归入</td></tr>
+      <tr><td><b>进入路径口径</b></td><td><b>481</b></td><td>其中 80 条同时符合多条路径，按优先级取主标签</td></tr>
     </table>
-    <p class="note"><span class="flag">⚠</span> 因此两个数据源<b>分工明确</b>：<b>薪资结论只采信 JobsDB</b>（有可解析薪资）；<b>雇主结构与岗位供给采信 LinkedIn</b>（雇主真实、岗位新鲜）。任何用 LinkedIn 谈薪资的说法都不成立。</p>
+    <p class="note">排除标准是<b>职能性质</b>而非公司大小：IT/工程/开发、纯财务核算（FP&amp;A、Finance Manager、会计）、法务合规行政、市场/PR/HR、明确非金融行业、零售保险推销。这些岗位即便挂着「金融」字样，也不构成可迁移的职业路径。</p>
   </div>
 
   <div class="chart">
-    <h4>八条路径的岗位供给：LinkedIn 实测（JobsDB 盲区的直接补丁）</h4>
+    <h4>八条路径的岗位供给：LinkedIn 实测</h4>
     <div class="bar-row">
-          <div class="bar-label">P8 研究型：卖方/买方 Re</div>
+          <div class="bar-label">P1 基金运营纵深（Fun</div>
           <div class="bar-track"><div class="bar-fill" style="width:100%;background:var(--accent)"></div></div>
-          <div class="bar-val">55</div></div><div class="bar-row">
-          <div class="bar-label">P1 基金运营纵深（Fund </div>
-          <div class="bar-track"><div class="bar-fill" style="width:95%;background:var(--accent)"></div></div>
+          <div class="bar-val">89</div></div><div class="bar-row">
+          <div class="bar-label">P7 机构业务/客户关系/</div>
+          <div class="bar-track"><div class="bar-fill" style="width:99%;background:var(--accent)"></div></div>
+          <div class="bar-val">88</div></div><div class="bar-row">
+          <div class="bar-label">P4 风险/交易支持（Ri</div>
+          <div class="bar-track"><div class="bar-fill" style="width:90%;background:var(--accent)"></div></div>
+          <div class="bar-val">80</div></div><div class="bar-row">
+          <div class="bar-label">P8 研究型：卖方/买方 </div>
+          <div class="bar-track"><div class="bar-fill" style="width:75%;background:var(--accent)"></div></div>
+          <div class="bar-val">67</div></div><div class="bar-row">
+          <div class="bar-label">P2 流程自动化/金融科技</div>
+          <div class="bar-track"><div class="bar-fill" style="width:58%;background:var(--accent)"></div></div>
           <div class="bar-val">52</div></div><div class="bar-row">
-          <div class="bar-label">P5 金融业务分析/实施（Fi</div>
-          <div class="bar-track"><div class="bar-fill" style="width:91%;background:var(--accent)"></div></div>
-          <div class="bar-val">50</div></div><div class="bar-row">
-          <div class="bar-label">P4 风险/交易支持（Risk</div>
-          <div class="bar-track"><div class="bar-fill" style="width:87%;background:var(--accent)"></div></div>
-          <div class="bar-val">48</div></div><div class="bar-row">
-          <div class="bar-label">P3 产品与基金设立（Prod</div>
-          <div class="bar-track"><div class="bar-fill" style="width:82%;background:var(--accent)"></div></div>
-          <div class="bar-val">45</div></div><div class="bar-row">
-          <div class="bar-label">P7 机构业务/客户关系/销售</div>
-          <div class="bar-track"><div class="bar-fill" style="width:67%;background:var(--accent)"></div></div>
-          <div class="bar-val">37</div></div><div class="bar-row">
-          <div class="bar-label">P9 投资型：投后管理/Por</div>
-          <div class="bar-track"><div class="bar-fill" style="width:51%;background:var(--accent)"></div></div>
-          <div class="bar-val">28</div></div><div class="bar-row">
-          <div class="bar-label">P2 流程自动化/金融科技（A</div>
-          <div class="bar-track"><div class="bar-fill" style="width:47%;background:var(--accent)"></div></div>
-          <div class="bar-val">26</div></div>
-    <p class="note"><b>关键修正</b>：JobsDB 口径下 P8（研究型）与 P9（投后）样本为 0，只能标「仅参考」。LinkedIn 实测显示 <b>P8 有 55 条在招、P9 有 28 条</b>——这两条路径<b>市场供给真实存在</b>，之前不是「没岗位」，而是「被分类口径排除了」。这直接支持把 P8/P9 作为正式候选而非陪衬。</p>
+          <div class="bar-label">P5 金融业务分析/实施（</div>
+          <div class="bar-track"><div class="bar-fill" style="width:52%;background:var(--accent)"></div></div>
+          <div class="bar-val">46</div></div><div class="bar-row">
+          <div class="bar-label">P9 投资型：投后管理/P</div>
+          <div class="bar-track"><div class="bar-fill" style="width:44%;background:var(--accent)"></div></div>
+          <div class="bar-val">39</div></div><div class="bar-row">
+          <div class="bar-label">P3 产品与基金设立（Pr</div>
+          <div class="bar-track"><div class="bar-fill" style="width:22%;background:var(--accent)"></div></div>
+          <div class="bar-val">20</div></div>
+    <p class="note"><b>关键修正</b>：JobsDB 口径下 P8（研究型）与 P9（投后）样本为 0，只能标「仅参考」。LinkedIn 实测显示 <b>P8 有 67 条在招、P9 有 39 条</b>——这两条路径<b>市场供给真实存在</b>，之前不是「没岗位」，而是「被分类口径排除了」。这直接支持把 P8/P9 作为正式候选而非陪衬。</p>
   </div>
 
   <div class="chart">
     <h4>各路径的雇主结构（LinkedIn，雇主可见）</h4>
     <table>
-      <tr><th>路径</th><th>在招数</th><th>中资</th><th>外资</th><th>猎头</th><th>数字资产</th><th>未分类</th></tr>
-      <tr><td><b>P8</b></td><td>55</td><td>1</td><td>28</td><td>7</td><td>4</td><td>15</td></tr><tr><td><b>P1</b></td><td>52</td><td>6</td><td>28</td><td>8</td><td>1</td><td>9</td></tr><tr><td><b>P5</b></td><td>50</td><td>4</td><td>26</td><td>12</td><td>0</td><td>4</td></tr><tr><td><b>P4</b></td><td>48</td><td>5</td><td>18</td><td>7</td><td>6</td><td>11</td></tr><tr><td><b>P3</b></td><td>45</td><td>3</td><td>15</td><td>0</td><td>10</td><td>15</td></tr><tr><td><b>P7</b></td><td>37</td><td>2</td><td>15</td><td>6</td><td>0</td><td>13</td></tr><tr><td><b>P9</b></td><td>28</td><td>2</td><td>10</td><td>5</td><td>0</td><td>11</td></tr><tr><td><b>P2</b></td><td>26</td><td>1</td><td>4</td><td>4</td><td>3</td><td>9</td></tr>
+      <tr><th>路径</th><th>在招数</th><th>中资</th><th>外资</th><th>猎头</th><th>虚拟资产</th><th>港资</th><th>未分类</th></tr>
+      <tr><td><b>P1</b> 基金运营纵深</td><td>89</td><td>13</td><td>52</td><td>15</td><td>5</td><td>1</td><td>2</td></tr><tr><td><b>P7</b> 客户/机构业务</td><td>88</td><td>10</td><td>57</td><td>10</td><td>3</td><td>0</td><td>8</td></tr><tr><td><b>P4</b> 风险/交易支持</td><td>80</td><td>10</td><td>37</td><td>19</td><td>9</td><td>1</td><td>4</td></tr><tr><td><b>P8</b> 研究型</td><td>67</td><td>5</td><td>39</td><td>12</td><td>4</td><td>0</td><td>7</td></tr><tr><td><b>P2</b> 自动化×FinTec</td><td>52</td><td>2</td><td>31</td><td>6</td><td>4</td><td>2</td><td>4</td></tr><tr><td><b>P5</b> 金融BA/实施</td><td>46</td><td>4</td><td>24</td><td>10</td><td>1</td><td>0</td><td>6</td></tr><tr><td><b>P9</b> 投后/投资</td><td>39</td><td>2</td><td>20</td><td>4</td><td>2</td><td>1</td><td>10</td></tr><tr><td><b>P3</b> 产品与基金设立</td><td>20</td><td>2</td><td>15</td><td>0</td><td>1</td><td>2</td><td>0</td></tr>
+      <tr><td colspan="2"><b>合计（有效 481）</b></td><td>48</td><td>275</td><td>76</td><td>29</td><td>7</td><td>41</td></tr>
     </table>
-    <p class="note"><b>读法（重要）</b>：这组数字<b>不能</b>当作香港市场的真实雇主结构。LinkedIn 上外资占 44.2%、中资仅 7.0%，这是<b>平台取样偏误</b>——中资机构大量通过 JobsDB、内推、微信渠道招聘，不在 LinkedIn 发英文岗。所以它只能回答一个问题：<b>「哪些路径在 LinkedIn 这类公开英文渠道上供给充分」</b>，其中 <b>P8（研究型）外资占 51%</b>，说明研究岗基本是外资/国际机构的场子，中资券商研究岗在 LinkedIn 上几乎不招（仅 1 条）。</p>
+    <p class="note"><b>读法（重要）</b>：这组数字<b>不能</b>当作香港市场的真实雇主结构。LinkedIn 上外资占 57.2%、中资仅 10.0%，这是<b>平台取样偏误</b>——中资机构大量通过 JobsDB、内推、微信渠道招聘，不在 LinkedIn 发英文岗。所以它只回答一个问题：<b>「哪些路径在公开英文渠道上供给充分」</b>。其中 <b>P8（研究型）外资占 58%</b>，中资仅 5 条——研究岗基本是外资/国际机构的场子。</p>
   </div>
 
   <div class="chart">
-    <h4>头部雇主（LinkedIn 在招数 Top 12）</h4>
+    <h4>虚拟资产：29 条（占有效 6.0%），最集中的是风险与交易支持</h4>
+    <table>
+      <tr><th>路径</th><th>岗位数</th><th>占 VA 岗位</th></tr>
+      <tr><td><b>P4</b> 风险/交易支持</td><td>9</td><td>31%</td></tr><tr><td><b>P1</b> 基金运营纵深</td><td>5</td><td>17%</td></tr><tr><td><b>P2</b> 自动化×FinTech</td><td>4</td><td>14%</td></tr><tr><td><b>P8</b> 研究型</td><td>4</td><td>14%</td></tr><tr><td><b>P7</b> 客户/机构业务</td><td>3</td><td>10%</td></tr><tr><td><b>P9</b> 投后/投资</td><td>2</td><td>7%</td></tr><tr><td><b>P3</b> 产品与基金设立</td><td>1</td><td>3%</td></tr><tr><td><b>P5</b> 金融BA/实施</td><td>1</td><td>3%</td></tr>
+    </table>
+    <p class="note"><b>供给最集中的雇主</b>：BIT Official（6）、OSL（5）、Binance（5）、OKX（3）、Crypto.com（2）、Bitget（2）、Coins.ph（2）、Animoca Brands（2）。</p>
+    <p class="note"><b>结构特征</b>：虚拟资产岗位 9 条落在风险/交易支持（P4）、5 条在运营（P1）——说明这条赛道的<b>中后台需求大于前台投研</b>（P8 仅 4 条、P9 仅 2 条）。对你而言，持牌虚拟资产机构的中后台是<b>已有可迁移经验的方向</b>（合规/风控/运营密度高、持牌主体受 SFC 监管、与你现在做的 NAV 复核＋自动化同源），但它的岗位总量只有传统的约 6.0%，<b>适合当差异化切口，不足以当主赛道</b>。</p>
+  </div>
+
+  <div class="chart">
+    <h4>P7「客户/机构业务」内部结构：64 条是私行投顾，不是零售推销</h4>
+    <table>
+      <tr><th>细分</th><th>岗位数</th><th>典型岗位</th></tr>
+      <tr><td><b>私行/投顾</b></td><td>64</td><td>Investment Counsellor / Investment Advisor / Private Wealth Advisor / Investment Specialist</td></tr>
+      <tr><td>机构业务</td><td>21</td><td>Institutional Distribution / Investor Relations / Corporate Access</td></tr>
+      <tr><td>客户服务/其他</td><td>25</td><td>Client Service / Client Onboarding / Relationship Management</td></tr>
+      <tr><td>商务拓展</td><td>2</td><td>Business Development</td></tr>
+    </table>
+    <p class="note">这一栏直接回答「P7 是不是低门槛推销」：<b>不是</b>。占七成以上的是私行/投顾岗——需要牌照、要读产品与市场、面对高净值客户做配置建议，与零售保险推销是两种工作。<b>但它也不是「机构业务」</b>，客户属性偏个人/家族，与你之前设想的机构销售不是同一件事。</p>
+  </div>
+
+  <div class="chart">
+    <h4>头部雇主（有效岗位在招数 Top 12）</h4>
     <table>
       <tr><th>雇主</th><th>在招岗位</th></tr>
-      <tr><td>CITIC Securities International</td><td>19</td></tr><tr><td>DBS Bank</td><td>15</td></tr><tr><td>OCBC</td><td>12</td></tr><tr><td>Selby Jennings</td><td>11</td></tr><tr><td>Morgan Stanley</td><td>11</td></tr><tr><td>JPMorganChase</td><td>11</td></tr><tr><td>Futu Holdings Limited</td><td>11</td></tr><tr><td>BIT Official</td><td>10</td></tr><tr><td>Huatai International Financial Holdings Company Limited</td><td>8</td></tr><tr><td>Industrial and Commercial Bank of China</td><td>8</td></tr><tr><td>Bank of China (Hong Kong)</td><td>8</td></tr><tr><td>Hays</td><td>8</td></tr>
+      <tr><td>CITIC Securities International</td><td>16</td></tr><tr><td>DBS Bank</td><td>12</td></tr><tr><td>OCBC</td><td>11</td></tr><tr><td>JPMorganChase</td><td>10</td></tr><tr><td>Industrial and Commercial Bank of China</td><td>8</td></tr><tr><td>Bank of China (Hong Kong)</td><td>8</td></tr><tr><td>Huatai International Financial Holdings Company Limited</td><td>7</td></tr><tr><td>Standard Chartered</td><td>7</td></tr><tr><td>Citi</td><td>7</td></tr><tr><td>Selby Jennings</td><td>6</td></tr><tr><td>CICC</td><td>6</td></tr><tr><td>BIT Official</td><td>6</td></tr>
     </table>
-    <p class="note">头部雇主里 <b>CITIC Securities International（19 条）</b>、<b>Futu（11 条）</b>、<b>华泰国际（8 条）</b>、<b>工银亚洲/中银香港</b> 都在大量招人——<b>这印证了「香港在內地化」的判断</b>：中资机构是当前香港金融中后台的招聘主力之一，且它们愿意在 LinkedIn 发英文岗（说明对英文有要求，但主体仍是中资文化）。这对你意味着：<b>中资平台 + 英文 JD 是可达的交集</b>，不必二选一。</p>
+    <p class="note">头部雇主里 <b>CITIC Securities International（16 条）</b>、<b>Futu（5 条）</b>、<b>华泰国际（7 条）</b>、<b>工银亚洲/中银香港</b> 都在大量招人——<b>这印证了「香港在內地化」的判断</b>：中资机构是当前香港金融中后台的招聘主力之一，且它们愿意在 LinkedIn 发英文岗。对你意味着：<b>中资平台 + 英文 JD 是可达的交集</b>，不必二选一。</p>
   </div>
 
   <div class="chart">
     <h4>本节局限（显式标注，避免误用）</h4>
     <ul style="padding-left:20px;color:var(--secondary);font-size:14px;line-height:1.9">
-      <li>LinkedIn 公开搜索页几乎不标薪资（覆盖率见 quality），故本数据集只用于「岗位供给强度 + 雇主结构」，不用于薪资分位。</li><li>公司字段含约 78 条猎头/招聘机构代发岗位（11.1%），其真实雇主未知，已单列为「猎头」。</li><li>路径归属按标题关键词匹配，允许多标签（一条岗位可同时属于 P1/P4），故各路径人数不可相加。</li><li>378 条岗位未命中任何路径关键词（53.8%），多为泛金融/非目标岗。</li>
-      <li><b>53.8% 岗位未命中任何路径关键词</b>，因为关键词搜索会带回大量泛金融岗（Relationship Manager、Accountant、PM 等），这些不纳入路径统计。</li>
+      <li>LinkedIn 公开搜索页几乎不标薪资（覆盖率见 quality），故本数据集只用于「岗位供给强度 + 雇主结构」，不用于薪资分位。</li><li>公司字段含 96 条猎头/招聘机构代发岗位（13.7%），真实雇主未知，已单列「猎头」。</li><li>路径按主标签计数（一条岗位只算一条路径），另有 n_any_label 为辅标签口径；两口径不可混用。</li><li>二次筛选后有效岗位 481 条（68.4%），硬排除 121 条，未定 101 条（14.4%）。未定项以标题无法判职能，可能是漏判也可能非目标岗，未强行归类。</li>
+      <li>另有 <b>101 条（14.4%）标题无法判职能</b>，未纳入任何路径，也未强行归类——这部分的不确定性比错误归类更可接受。</li>
     </ul>
   </div>
 </section>
