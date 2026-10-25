@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-page-node-id="0nOPlYJIc1VTSPiQ4vbl6M">
+<head data-page-node-id="78rhxXhP3ewqkvEGWjYQYM">
+<meta charset="UTF-8" data-page-node-id="IBiOEMGEjfUpMvCsy6hiCt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" data-page-node-id="DUsv4ADlX3cGWr25EGFDPa">
+<title>香港金融中后台职业发展路径分析 · 脱敏版</title>
+<style>
+:root{
+  --bg:#f5f5f2; --surface:#ffffff; --text:#1c2d43; --secondary:#728094;
+  --accent:#157d80; --gold:#ad9464; --negative:#b85555;
+  --line:#e3e1da; --c1:#157d80; --c2:#ad9464; --c3:#3d6aa2; --c4:#8a5aa0;
+  --c5:#b85555; --c6:#5a7d3d;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#121417; --surface:#1c1e22; --text:#e6e3dc; --secondary:#8b95a6;
+    --line:#2c2e34; --c1:#3fb4b8; --c2:#c9b079; --c3:#6d9ad0; --c4:#b287c4;
+    --c5:#d07878; --c6:#8fb86a; --accent:#3fb4b8; --gold:#c9b079; --negative:#d07878; }
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+body{ background:var(--bg); color:var(--text); font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
+  line-height:1.7; font-size:16px; padding:0 0 80px; }
+.wrap{ max-width:1080px; margin:0 auto; padding:0 28px; }
+/* Hero */
+.hero{ padding:56px 28px 40px; }
+.hero .kicker{ color:var(--gold); font-size:13px; letter-spacing:.12em; text-transform:uppercase; margin-bottom:10px; }
+.hero h1{ font-size:38px; line-height:1.25; font-weight:700; margin-bottom:14px; }
+.hero .sub{ color:var(--secondary); font-size:17px; max-width:720px; }
+.cards{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:32px; }
+.card{ background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:22px; }
+.card .num{ color:var(--gold); font-size:13px; font-weight:600; margin-bottom:8px; }
+.card h3{ font-size:17px; margin-bottom:8px; font-weight:600; }
+.card p{ color:var(--secondary); font-size:14px; }
+.card .redline{ color:var(--negative); font-weight:600; }
+/* 章节 */
+section{ padding:30px 0; }
+h2.sec{ font-size:26px; font-weight:700; margin-bottom:6px; display:flex; align-items:baseline; gap:12px; }
+h2.sec .no{ color:var(--gold); font-size:15px; font-weight:700; }
+.sec-sub{ color:var(--secondary); font-size:14px; margin-bottom:24px; }
+/* KPI */
+.kpis{ display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin:20px 0; }
+.kpi{ background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:16px; text-align:center; }
+.kpi .v{ font-size:28px; font-weight:700; color:var(--accent); }
+.kpi .l{ font-size:13px; color:var(--secondary); margin-top:4px; }
+/* 图表容器 */
+.chart{ background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:24px; margin:18px 0; }
+.chart h4{ font-size:15px; color:var(--secondary); font-weight:600; margin-bottom:16px; }
+/* 条形图 */
+.bar-row{ display:flex; align-items:center; gap:12px; margin:8px 0; }
+.bar-label{ width:120px; text-align:right; font-size:13px; color:var(--secondary); flex-shrink:0; }
+.bar-track{ flex:1; background:var(--bg); border-radius:6px; height:22px; overflow:hidden; }
+.bar-fill{ height:100%; background:var(--accent); border-radius:6px; transition:width .4s; }
+.bar-val{ width:44px; font-size:13px; color:var(--text); font-weight:600; }
+/* 表格 */
+table{ width:100%; border-collapse:collapse; font-size:14px; margin:12px 0; }
+th,td{ padding:10px 12px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; }
+th{ color:var(--secondary); font-weight:600; font-size:13px; background:var(--bg); }
+/* 路径卡 */
+.path{ background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:22px; margin:16px 0; }
+.path .ph{ display:flex; align-items:center; gap:14px; margin-bottom:10px; }
+.path .score{ font-size:22px; font-weight:700; color:var(--accent); }
+.path h3{ font-size:18px; }
+.path .meta{ color:var(--secondary); font-size:13px; }
+.path .dims{ display:grid; grid-template-columns:repeat(5,1fr); gap:10px; margin:12px 0; }
+.dim{ text-align:center; }
+.dim .v{ font-size:16px; font-weight:700; }
+.dim .l{ font-size:11px; color:var(--secondary); }
+.tag-out{ color:var(--negative); font-weight:600; }
+/* 热力矩阵 */
+.heat{ display:grid; grid-template-columns:160px repeat(5,1fr); gap:2px; font-size:12px; margin:12px 0; }
+.heat .hcell{ padding:8px 6px; text-align:center; border-radius:4px; color:#fff; }
+.heat .hlab{ text-align:right; padding:8px 8px 8px 0; color:var(--secondary); font-size:12px; }
+/* 门径 */
+.phase{ background:var(--surface); border-left:4px solid var(--accent); border-radius:0 12px 12px 0;
+  padding:18px 20px; margin:14px 0; }
+.phase h4{ font-size:16px; margin-bottom:8px; }
+.phase ul{ padding-left:20px; color:var(--secondary); font-size:14px; }
+.phase li{ margin:4px 0; }
+/* 附录 */
+.foot{ color:var(--secondary); font-size:12.5px; border-top:1px solid var(--line); padding-top:20px; margin-top:30px; }
+.note{ font-size:13px; color:var(--secondary); }
+.flag{ color:var(--negative); font-weight:600; }
+@media (max-width:760px){
+  .cards{grid-template-columns:1fr;} .kpis{grid-template-columns:repeat(2,1fr);}
+  .path .dims{grid-template-columns:repeat(3,1fr);} .hero h1{font-size:30px;}
+}
+@media print{ .chart,.card,.path,.phase{box-shadow:none;} }
+</style>
+</head>
+<body data-page-node-id="iP6LxTZm6NmMjtwb2o37qD">
+
+<div class="hero wrap" data-page-node-id="0JM99Y387DEl7ZcticrrrV">
+  <div class="kicker" data-page-node-id="HSWKwhstpFJEAfyIjTizzv">Career Path Analysis · 数据驱动</div>
+  <h1 data-page-node-id="Nxw5gc1gTJCDFos0f4rstA">你的职业发展之路：<br data-page-node-id="jf15UV4dEJfuSkXlyP6WfG">不预设目标，先看清自己的上下限</h1>
+  <p class="sub" data-page-node-id="2gzkWPItN99p1oHWX04N8u">基于 281 条香港在招岗位（159 条可解析薪资）+ 304 人职业轨迹 + 一套外部职业规划方法论。回答一个问题：<b data-page-node-id="GQCxXBWqGbPtBxBbWZ3Brs">从 当前月薪 出发，不同路径、不同情景下，你的地板和天花板分别在哪。</b></p>
+  <div class="cards" data-page-node-id="Q87leyuYJlutzrHBG0BHv3">
+    <div class="card" data-page-node-id="pRDNCrhpBWB6BTB3V8eFtg"><div class="num" data-page-node-id="yacnkU1Dand0BYyaxVc4ci">现状定位</div>
+      <h3 data-page-node-id="1Wg2D4LSnYpBI9Dm2dpXeB">当前贴着市场地板</h3>
+      <p data-page-node-id="Gxdgzgi2Mx0fKPHklN5pf2">你当前月薪在全市场 149 条正常薪资中处于 <b data-page-node-id="tHsNUbLaYEEiz9LIcDcx2t">P12</b> 分位（88% 的岗位比你高）。市场 P50 是 42,500。你不是「偏低」，是被严重低估——上升空间巨大。</p>
+    </div>
+    <div class="card" data-page-node-id="TqFPwSIyz65DbAla0DAW4R"><div class="num" data-page-node-id="oAq6EiHvClOueS7fkaCtVj">三年区间</div>
+      <h3 data-page-node-id="rIahknBEc9THJ1D2Xf4KRh">保守 27,500 → 基准 42,500 → 激进 60,000</h3>
+      <p data-page-node-id="U9KwyMW9n0HRelMrKC76Rq">走通运营主线，3 年基准可到 <b data-page-node-id="EdnUBz48AtipFOHzl0Qw3c">42,500</b>（接近翻倍）；激进可达 60,000。原来的「3 年 某目标薪资」其实偏保守——某目标薪资 只到 P25-P50 之间。</p>
+    </div>
+    <div class="card" data-page-node-id="TzemU4btvo0BIAUvEmWYaz"><div class="num" data-page-node-id="IX1gc8X4RjqnDN2DPjEIQh">三条红线</div>
+      <h3 class="redline" data-page-node-id="cuW7GFmyMabBQ83y5IsqDX">不能写成自己的能力</h3>
+      <p data-page-node-id="SJaEl4kntam2uNOYFm9Q7O">① 独立编程 / 软件开发；② 独立计算 NAV（你目前是复核）；③ TRS 实操。这三项要诚实标注，否则天花板是虚的。</p>
+    </div>
+  </div>
+</div>
+
+<div class="wrap" data-page-node-id="QisU0CQ44vC4DMQYJWhEpF">
+
+<!-- 01 市场侧 -->
+<section data-page-node-id="9BrUcwrqZ0rsrdcBjmDzPp">
+  <h2 class="sec" data-page-node-id="HHOKGXBdi1jB73K75FnmQ2"><span class="no" data-page-node-id="PVBtWMTZRF2R9qvHtaZaXD">01</span>市场侧：香港金融中后台，什么岗位多、什么给钱多</h2>
+  <p class="sec-sub" data-page-node-id="8vNp6IN0iUVERk3iIcnDbE">数据源：JobsDB 香港，281 条岗位详情（2026-10-25 采集），159 条可解析薪资。</p>
+
+  <div class="kpis" data-page-node-id="MF4R48dzDzeqjQ3BGZwUXr">
+    <div class="kpi" data-page-node-id="qWQHkA5gq4N23PDnugEd2q"><div class="v" data-page-node-id="GaoeFoOHtlzQrASeYK0XA2">281</div><div class="l" data-page-node-id="ZXcgxGDaOGwCzVuKRQmRwL">采集岗位总数</div></div>
+    <div class="kpi" data-page-node-id="IShdTfv53IbXouiqOm1HCc"><div class="v" data-page-node-id="O1EE0339w533ANWOeFg7Zd">159</div><div class="l" data-page-node-id="DUHND8aKHP2TK8Dfc0Fmeu">可解析薪资</div></div>
+    <div class="kpi" data-page-node-id="DjlRwzeYak7ue0s617Hnlf"><div class="v" data-page-node-id="6DYOLOJOjMxhZ1TRd4Hcr7">P12</div><div class="l" data-page-node-id="F5kDwGA5haiQBJ0F9PlR8m">你的 当前月薪 全市场分位</div></div>
+    <div class="kpi" data-page-node-id="QRDxLt55ydOXWnmCPD0yOd"><div class="v" data-page-node-id="v2qwq5kk5PmevBiPzxLssP">42,500</div><div class="l" data-page-node-id="i0E55460iKBQ7C3fL01Kut">全市场中位数</div></div>
+  </div>
+
+  <div class="chart" data-page-node-id="Gbk4W8clrOISCRQI5Y85Ky">
+    <h4 data-page-node-id="v1x0EQ8bbqDHuB47qvr9ri">港元月薪分档（149 条正常样本）</h4>
+    <div class="bar-row" data-page-node-id="EE375gRtTGZCM63dyPeIZf">
+          <div class="bar-label" data-page-node-id="GJJFHEVYSlwEp0iKMX8Mnf"><15k</div>
+          <div class="bar-track" data-page-node-id="ldOg7NzGfRFAHVmkOsuWGZ"><div class="bar-fill" style="width:6%;background:var(--accent)" data-page-node-id="tHm0h4cF3ijMFVm6Id5HfS"></div></div>
+          <div class="bar-val" data-page-node-id="1AFdIBJJgZCm8PAlHXYGgw">2</div></div><div class="bar-row" data-page-node-id="kuqLkABLeO8OEUxOo5TaWJ">
+          <div class="bar-label" data-page-node-id="merHzFrFLpbzJNPh50lPPE">15-25k</div>
+          <div class="bar-track" data-page-node-id="bH1gH7JJq1zfI3OzPCgzHC"><div class="bar-fill" style="width:67%;background:var(--accent)" data-page-node-id="9OYoTy8JgEC4vU7RLKGDjM"></div></div>
+          <div class="bar-val" data-page-node-id="YfvXN6c19mcssl8pe1ZQVQ">24</div></div><div class="bar-row" data-page-node-id="lyDbvx5YEKrxBH5d8Z2QIv">
+          <div class="bar-label" data-page-node-id="CNcBHAQoGAJENewOVeVRBn">25-35k</div>
+          <div class="bar-track" data-page-node-id="e2WCXbIiSv61IQK2X7d3it"><div class="bar-fill" style="width:81%;background:var(--accent)" data-page-node-id="DHDsG0T3NoE5B7bfrnANDk"></div></div>
+          <div class="bar-val" data-page-node-id="CBcsFAQnElOQDFrvJQUvZS">29</div></div><div class="bar-row" data-page-node-id="cmWNN5IHNbWzCqN2RMlYJ3">
+          <div class="bar-label" data-page-node-id="CaLshx5h4qRz9qbRuR69SM">35-50k</div>
+          <div class="bar-track" data-page-node-id="tsmTFNHA2ybbc8TbBD35qh"><div class="bar-fill" style="width:100%;background:var(--accent)" data-page-node-id="x2X9ZvJLOnS7eywMN7ZZmH"></div></div>
+          <div class="bar-val" data-page-node-id="YxhaJ0Gipg2g0wolIQGuIP">36</div></div><div class="bar-row" data-page-node-id="MDxsT1whzNmo9VOe7UwUPH">
+          <div class="bar-label" data-page-node-id="QF9F3Ft0ZKNWooiFCBh9NS">50-70k</div>
+          <div class="bar-track" data-page-node-id="weX48SIDfS7xrtJmG7xFJK"><div class="bar-fill" style="width:97%;background:var(--accent)" data-page-node-id="CGubhKxjExGEjkAxyLrJZZ"></div></div>
+          <div class="bar-val" data-page-node-id="RkozlyQnEiVGonaOl7CDO8">35</div></div><div class="bar-row" data-page-node-id="6OQ5itw1X6C93I8VahFcUq">
+          <div class="bar-label" data-page-node-id="iPSLgdIt1fGfIwW3rA6H5P">70-100k</div>
+          <div class="bar-track" data-page-node-id="09w6FgwHzjjdbjLFhZDvI8"><div class="bar-fill" style="width:50%;background:var(--accent)" data-page-node-id="nID8WhDItfmq07oni6RIvL"></div></div>
+          <div class="bar-val" data-page-node-id="Wkv3HEAY4HJfhznQbr0bYF">18</div></div><div class="bar-row" data-page-node-id="dZv2AsYdBxPvMf7TSCyzSx">
+          <div class="bar-label" data-page-node-id="pHfgWOVkMkMCorGiTcuk0f">>100k</div>
+          <div class="bar-track" data-page-node-id="csra8PkQxOZrxlZOBhcNoH"><div class="bar-fill" style="width:14%;background:var(--accent)" data-page-node-id="DPTft4XOWLmUq7Aa1pIVeP"></div></div>
+          <div class="bar-val" data-page-node-id="DHKgDylRtXU8KE35HXWyJj">5</div></div>
+    <p class="note" data-page-node-id="YYKw39tVtFywQ9UBQ6b2yh">主体集中在 25-70k。你的 当前月薪 处在最底部的 &lt;25k 档，而市场的「甜区」在 35-70k。某目标薪资 只是从地板往上挪一格，不是终点。</p>
+  </div>
+
+  <div class="chart" data-page-node-id="PEZWkJbTF7XHDGbCrvz9jx">
+    <h4 data-page-node-id="yPAQD7MW9ZtotEgOcISfxA">岗位子分类分布</h4>
+    <div class="bar-row" data-page-node-id="HMNVAkfn2BsnjbIkq0p9X7">
+          <div class="bar-label" data-page-node-id="h1sbqLfAzNc4MxwYEM6bzt">银行企业与机构</div>
+          <div class="bar-track" data-page-node-id="Y9kSsDTd85R3yObxaFABo6"><div class="bar-fill" style="width:100%;background:var(--accent)" data-page-node-id="qvlJyZI6SS4Z2wLIWM6xN2"></div></div>
+          <div class="bar-val" data-page-node-id="pWwUxzj8YqqmKKWSJwDH0f">148</div></div><div class="bar-row" data-page-node-id="C6VHJjRoR3KJqf0EvwU6mW">
+          <div class="bar-label" data-page-node-id="jg6tnBEt9UvPmovEIHsBL6">客户服务</div>
+          <div class="bar-track" data-page-node-id="hbHFcWhvIvEK7fwHwBe8iB"><div class="bar-fill" style="width:18%;background:var(--accent)" data-page-node-id="OLn8qudNfg5TZB0hWzwHdi"></div></div>
+          <div class="bar-val" data-page-node-id="9gLcrJdM5R2Dvnru43AaS4">26</div></div><div class="bar-row" data-page-node-id="Gb5Tibj65bbni5ywOkpIPp">
+          <div class="bar-label" data-page-node-id="3qAln7WoMZvvnBv0BRSUmW">证券经纪与交易</div>
+          <div class="bar-track" data-page-node-id="ofZ31OsC5d7DcWNml6rUmz"><div class="bar-fill" style="width:17%;background:var(--accent)" data-page-node-id="hAS8zfODuhYLJk1X7SzixU"></div></div>
+          <div class="bar-val" data-page-node-id="Mw43CGfIM1dDLDHEGME5AA">25</div></div><div class="bar-row" data-page-node-id="4T0ExxwnLnTydh6j8murYA">
+          <div class="bar-label" data-page-node-id="H5jf8RpUTOV5mctz1Tz0xV">基金管理</div>
+          <div class="bar-track" data-page-node-id="4qJpkqAB2FwyQskh6kGlK9"><div class="bar-fill" style="width:48%;background:var(--accent)" data-page-node-id="pVdufzKsLF3hKQSatdwqck"></div></div>
+          <div class="bar-val" data-page-node-id="GCnQLqElhD80XH3dhC8DFv">71</div></div><div class="bar-row" data-page-node-id="5CnNEtKMdB3CBlj1VGmtSz">
+          <div class="bar-label" data-page-node-id="40EgMENbfIuePCsjgzQzSG">结算</div>
+          <div class="bar-track" data-page-node-id="nfq2Ify3mEecI0Ym4JL2dz"><div class="bar-fill" style="width:7%;background:var(--accent)" data-page-node-id="6ukf30Ir5gzQckzYZrbhVt"></div></div>
+          <div class="bar-val" data-page-node-id="zIcMPYWwFFsEgBqDToW4Gl">11</div></div>
+  </div>
+
+  <div class="chart" data-page-node-id="5Gk0A8m9EfQ12LfZGH5j54">
+    <h4 data-page-node-id="36K8HS2ZA4NsCQ1APyccJC">JD 里被反复要求的技能（关键词命中）</h4>
+    <div class="bar-row" data-page-node-id="M7A3NJwk03ltm22rQXWpUN">
+          <div class="bar-label" data-page-node-id="U6qnNpxwfrLisk9W2PFKpI">英语</div>
+          <div class="bar-track" data-page-node-id="AbHHdBnF5G6jZAZZ52NJJo"><div class="bar-fill" style="width:100%;background:var(--accent)" data-page-node-id="oQD3iK23GF0PAEfr6zEqgd"></div></div>
+          <div class="bar-val" data-page-node-id="oOkDAx2lramvsVJ9zAgbcZ">188 次</div></div><div class="bar-row" data-page-node-id="Ru7Lh03dzsRjZgSuttHpBR">
+          <div class="bar-label" data-page-node-id="nUlPwnxqZf5BZxmzWClT8q">Excel</div>
+          <div class="bar-track" data-page-node-id="WwH8aTHjc47sXlq2M0HyCG"><div class="bar-fill" style="width:83%;background:var(--accent)" data-page-node-id="IUFDjNzfujmqDN3DeB3aaS"></div></div>
+          <div class="bar-val" data-page-node-id="R9NffzQCm8peZ121tA74jp">156 次</div></div><div class="bar-row" data-page-node-id="HCdlkCWmmj7523svs6CgIr">
+          <div class="bar-label" data-page-node-id="fD1AAHNawDHw5ijaj5Z1Gr">中文</div>
+          <div class="bar-track" data-page-node-id="UMYk6lyOZObViSZkApKGlv"><div class="bar-fill" style="width:63%;background:var(--accent)" data-page-node-id="iOeSZgIo4jTY5L80idXSfM"></div></div>
+          <div class="bar-val" data-page-node-id="q0y8nFpiSz1YSENlfXBu8S">118 次</div></div><div class="bar-row" data-page-node-id="YnLbM8A2L8YlWFpIYXzPwK">
+          <div class="bar-label" data-page-node-id="q3jIc0DHjbFjv08KRrZdfi">普通话</div>
+          <div class="bar-track" data-page-node-id="RWtcgZeH4iZJCJzPfwrkMm"><div class="bar-fill" style="width:57%;background:var(--accent)" data-page-node-id="llDyI05aaIO2j3sqTB2w99"></div></div>
+          <div class="bar-val" data-page-node-id="tutiDTP00dYGaZFxEfalCa">107 次</div></div><div class="bar-row" data-page-node-id="74BVRwR2Z0cf1ru4jUagIv">
+          <div class="bar-label" data-page-node-id="dI5IpbP1jjEuqdb5jhEmja">粤语</div>
+          <div class="bar-track" data-page-node-id="TNZ21Iwr0pdbgmClbnhC1C"><div class="bar-fill" style="width:46%;background:var(--accent)" data-page-node-id="HBxHeP7TTkbLnt5YzevdBu"></div></div>
+          <div class="bar-val" data-page-node-id="RSlJwQ1MbvYuFqpf6ZB61t">87 次</div></div><div class="bar-row" data-page-node-id="FpAMpfDFxzjY9xR2TtX3WA">
+          <div class="bar-label" data-page-node-id="nrzEhLLp4jpkjsNZB9GpfL">SFC牌照</div>
+          <div class="bar-track" data-page-node-id="4uBxzQqmlU7SYraDDeG38V"><div class="bar-fill" style="width:28%;background:var(--accent)" data-page-node-id="0RCCSv3RwICSuV2cLVXbYt"></div></div>
+          <div class="bar-val" data-page-node-id="Hwb4vQcQ6Dm040T5jbsFvk">53 次</div></div><div class="bar-row" data-page-node-id="Z43nw33h1k9K2sKeiY19Ci">
+          <div class="bar-label" data-page-node-id="3ykGWNUr11UXKdZylRt7Ok">普通话</div>
+          <div class="bar-track" data-page-node-id="9GLlVvOAoSkbtwd7UpvARG"><div class="bar-fill" style="width:23%;background:var(--accent)" data-page-node-id="nutmPScVBal51zDNTAlHGE"></div></div>
+          <div class="bar-val" data-page-node-id="lXYwr7NwanDvicAgNdiJGP">43 次</div></div><div class="bar-row" data-page-node-id="BlQkZnlMj0wVhuR1Tin2lx">
+          <div class="bar-label" data-page-node-id="xBeneUi3yos4DBBrXHuR2f">对账</div>
+          <div class="bar-track" data-page-node-id="rhWqXh1tP3x7NkVetaBNXq"><div class="bar-fill" style="width:18%;background:var(--accent)" data-page-node-id="cdyBbD0r1VgHsBzyLvpFwb"></div></div>
+          <div class="bar-val" data-page-node-id="oWkm1t829H7RgvkQqE1g2P">33 次</div></div><div class="bar-row" data-page-node-id="2SaSpJmZOFZEFCIufu0TLh">
+          <div class="bar-label" data-page-node-id="H5EIVtYrkg83ZzhWrcFNDh">数字化</div>
+          <div class="bar-track" data-page-node-id="OObn2lbG7RYAmWOs5G81s3"><div class="bar-fill" style="width:16%;background:var(--accent)" data-page-node-id="EChwEiI1pbDWftdvimRO0B"></div></div>
+          <div class="bar-val" data-page-node-id="CjBlbpfDBWydUzDKxlylB0">31 次</div></div><div class="bar-row" data-page-node-id="esWA86ERMy3yknA5ZEbu5J">
+          <div class="bar-label" data-page-node-id="Xh9ZzpsYAH49lC7AImp8pF">CFA</div>
+          <div class="bar-track" data-page-node-id="M7DVHXRFc6iVMm6fUPKHpm"><div class="bar-fill" style="width:12%;background:var(--accent)" data-page-node-id="TTDtIr78Rqw05gUy8ZZtcr"></div></div>
+          <div class="bar-val" data-page-node-id="h294CT1EEqcT5WYOVFd8b8">23 次</div></div><div class="bar-row" data-page-node-id="Y5AkofzAifEuPlZV04v0Jb">
+          <div class="bar-label" data-page-node-id="BSxQSxhJhKwVBOCSLPfpJJ">NAV</div>
+          <div class="bar-track" data-page-node-id="CCheIOuJ4GrycwlUhzjbkE"><div class="bar-fill" style="width:9%;background:var(--accent)" data-page-node-id="mHwEEodnIgz4Czq61QuPFJ"></div></div>
+          <div class="bar-val" data-page-node-id="wlJYCNMscsQ0aMEcgCBwB5">17 次</div></div><div class="bar-row" data-page-node-id="DWaP7th1KzBtC9DhdiN1H4">
+          <div class="bar-label" data-page-node-id="y8rPe4P2u6A4zDkN1ePmfz">SWIFT</div>
+          <div class="bar-track" data-page-node-id="2uNMoBMyFNjxtWr86kKNku"><div class="bar-fill" style="width:7%;background:var(--accent)" data-page-node-id="ic3DdNpuzjoG6rmUayzPOC"></div></div>
+          <div class="bar-val" data-page-node-id="weDExMor0eEaifqjdBceWz">14 次</div></div>
+    <p class="note" data-page-node-id="RWatABj0VlIygoljjNpnhC">英语、Excel、中文三件套是地基；SFC 牌照、对账(reconciliation)、NAV 是运营岗的硬门槛。自动化/数字化(31次)已接近基线。</p>
+  </div>
+
+  <div class="chart" data-page-node-id="M3EBBBRx8rrV64iaFAXfep">
+    <h4 data-page-node-id="ZwAODlx6rWKHHHLoJALtDw">岗位标题高频词（需求热度代理）</h4>
+    <div class="bar-row" data-page-node-id="xk99MMvlfBEUKIfoec3IoP">
+          <div class="bar-label" data-page-node-id="C6tqJxhnSLNObsQx1pm3Hm">Banking</div>
+          <div class="bar-track" data-page-node-id="k0BwHioHNMSVqDCiC8d8Eh"><div class="bar-fill" style="width:100%;background:var(--accent)" data-page-node-id="sYlw5h8m2Q6H5LxdOJgv4v"></div></div>
+          <div class="bar-val" data-page-node-id="S5t6vCcL3dR3ZqfS9k5e6F">64 次</div></div><div class="bar-row" data-page-node-id="ZA5auFzR70uxFr141ki392">
+          <div class="bar-label" data-page-node-id="1RlQBhcNi6dm4dHHF6L6rr">Corporate</div>
+          <div class="bar-track" data-page-node-id="xaoCzfX5lQXEL2wNNHFqaF"><div class="bar-fill" style="width:80%;background:var(--accent)" data-page-node-id="h1aCgv7uLwBc2tnBRH2Ail"></div></div>
+          <div class="bar-val" data-page-node-id="3fE4BsWdjjPEIvPB3lsnMZ">51 次</div></div><div class="bar-row" data-page-node-id="0cql1mCAQMHplGRMTfEPQv">
+          <div class="bar-label" data-page-node-id="PLFVgOE9Xn4SZNnQPsX7DE">Management</div>
+          <div class="bar-track" data-page-node-id="j0MpeAIHW1OIeyQMSDODgi"><div class="bar-fill" style="width:55%;background:var(--accent)" data-page-node-id="cTfvlB5MvwjYbXODkarEf9"></div></div>
+          <div class="bar-val" data-page-node-id="jlFtpv6VuCKpi81mcR7sd7">35 次</div></div><div class="bar-row" data-page-node-id="kbnGmfGc2hvL9P1161GPLl">
+          <div class="bar-label" data-page-node-id="o6oRFbChYSR1qsjKBc7FrJ">Relationship</div>
+          <div class="bar-track" data-page-node-id="3duOF7hzzPnOSwuQkHnob4"><div class="bar-fill" style="width:48%;background:var(--accent)" data-page-node-id="gCfcpq2AbrNZqIcmdvL1js"></div></div>
+          <div class="bar-val" data-page-node-id="hl6T5wwoSd11dNPICfsGE7">31 次</div></div><div class="bar-row" data-page-node-id="tZorBppkS08HEiBOOY8jMl">
+          <div class="bar-label" data-page-node-id="pVGjxKyes4RfTL5W47Hzbj">Business</div>
+          <div class="bar-track" data-page-node-id="ZYaUB6tZLZNqa7vIog6z50"><div class="bar-fill" style="width:42%;background:var(--accent)" data-page-node-id="V1xYQvU4hElVIcXVQIA6gk"></div></div>
+          <div class="bar-val" data-page-node-id="mjd4a4gTSQArlBLANY9c8v">27 次</div></div><div class="bar-row" data-page-node-id="uCXBbiukTCVsaePyJ0A8e0">
+          <div class="bar-label" data-page-node-id="MStUJa6ERdzI3YIhZBDQws">Responsible</div>
+          <div class="bar-track" data-page-node-id="vjSAXl2xDCMRHZSMNmHdvj"><div class="bar-fill" style="width:38%;background:var(--accent)" data-page-node-id="F4cVKOcDWijxZxF42cjDcZ"></div></div>
+          <div class="bar-val" data-page-node-id="CPgSepwXQjTgKzdQXKD5Ku">24 次</div></div><div class="bar-row" data-page-node-id="jn2Ezs7GN8uAEmGg2ldfZ4">
+          <div class="bar-label" data-page-node-id="tRJpLT7e3uFm5DAQ7F7FYQ">Head</div>
+          <div class="bar-track" data-page-node-id="VFAkDpeGEDvI9FY9RLNEXz"><div class="bar-fill" style="width:33%;background:var(--accent)" data-page-node-id="0NliPWPHkKdo4vf0HrXbiw"></div></div>
+          <div class="bar-val" data-page-node-id="Isx3jeErW6iJhtk5xGsIPB">21 次</div></div><div class="bar-row" data-page-node-id="wFkbKFxwfHBSKO5qelf9Hi">
+          <div class="bar-label" data-page-node-id="KHzG2L3pOaSLQRMxSJEeyU">Fund</div>
+          <div class="bar-track" data-page-node-id="or95pXcfUdlwdvz5HmTeui"><div class="bar-fill" style="width:33%;background:var(--accent)" data-page-node-id="VYrEEJiDTBRV7B6arq1gPx"></div></div>
+          <div class="bar-val" data-page-node-id="W77X29dneyfK3WMKXGddov">21 次</div></div><div class="bar-row" data-page-node-id="dMzkDhdbOvjcMTQqWtjiQZ">
+          <div class="bar-label" data-page-node-id="8Fm6ELQP4iuUYNhsHJ8eMB">Operations</div>
+          <div class="bar-track" data-page-node-id="Pb5bPYvCqbrOjG2q5kf0Dk"><div class="bar-fill" style="width:31%;background:var(--accent)" data-page-node-id="WvMEcMOmW9CAwQYPp7JboM"></div></div>
+          <div class="bar-val" data-page-node-id="ygR9Jszyn2pEJmvayhUtlC">20 次</div></div><div class="bar-row" data-page-node-id="enQ7ZEDEDvf2sIPJdXAi2j">
+          <div class="bar-label" data-page-node-id="pGFQKaT6VnU0fFFGaGo23p">Trainee</div>
+          <div class="bar-track" data-page-node-id="qCgF2HhRQx7QkFnop59pFh"><div class="bar-fill" style="width:28%;background:var(--accent)" data-page-node-id="sXfF4YxKk6xcGBtXFLWnBk"></div></div>
+          <div class="bar-val" data-page-node-id="tERKuTGsR4UHG7W4TfWw5S">18 次</div></div><div class="bar-row" data-page-node-id="TfPFkaKQH2hsjTYo4AZjNb">
+          <div class="bar-label" data-page-node-id="PQ1b4pSVU01HAEuO8tWtcz">Sales</div>
+          <div class="bar-track" data-page-node-id="5KFLNLLfBEzF9YRrdnLuM3"><div class="bar-fill" style="width:27%;background:var(--accent)" data-page-node-id="iGfE8rBH7maXcmFjrek4qA"></div></div>
+          <div class="bar-val" data-page-node-id="4zDVWuY4bLOhItXS0hmhqh">17 次</div></div><div class="bar-row" data-page-node-id="XF5iWFWYCau20Z2QjpgTTN">
+          <div class="bar-label" data-page-node-id="JxSAM0EjaMH1mB9dB5oQ3x">Client</div>
+          <div class="bar-track" data-page-node-id="oS8iCvrkYEb1QXEMUw5vc3"><div class="bar-fill" style="width:27%;background:var(--accent)" data-page-node-id="Tb4RIiZIBMyb6WthmqHRE3"></div></div>
+          <div class="bar-val" data-page-node-id="THk4IqyLZKS6XP7v9RypQj">17 次</div></div>
+  </div>
+</section>
+
+<!-- 02 个人侧 -->
+<section data-page-node-id="hFXUcj1YZuvRGNs1tEwGwD">
+  <h2 class="sec" data-page-node-id="zvQB7bIrlBUDm7HCiMAcGx"><span class="no" data-page-node-id="FoGcmIuU9boMibAnORGozP">02</span>个人侧：你的经验资产盘点</h2>
+  <p class="sec-sub" data-page-node-id="6WHAeBGwCCOARmTmxxvTCs">把履历拆成可迁移的资产，每项标「证据 / 半衰期 / 可迁移性」。权重之和 = 100%。</p>
+
+  <div class="kpis" data-page-node-id="Y7mdoJFBSahA6nZZSgDU4h">
+    <div class="kpi" data-page-node-id="Spr1EN2CFhwdEfKRtS1jbs"><div class="v" data-page-node-id="UC8DVV4BtKWnLScPVywd3Q">P12</div><div class="l" data-page-node-id="YvNRvyVKCVLFIy4Z0nx4bK">当前月薪（HKD）</div></div>
+    <div class="kpi" data-page-node-id="p4COxKVFhNJyWuMpuxOURD"><div class="v" data-page-node-id="0ut7PyUaBk1sEVBji7iIyu">42,500</div><div class="l" data-page-node-id="A8LNIyJCj5JMJAS4YG5mDX">市场基准 P50</div></div>
+    <div class="kpi" data-page-node-id="UuODLiW6pIPkZnP3yzsCpE"><div class="v" data-page-node-id="Sjh2znT6L2KSjBlGeZzcyl">27,500–60,000</div><div class="l" data-page-node-id="dWQlkRIqoRVQusXaAyIfdo">三年可达区间（保守–激进）</div></div>
+    <div class="kpi" data-page-node-id="JBOFmAnryq5tvDG8ronjT8"><div class="v" data-page-node-id="piRK934zH766PgrFGEHGCp">P12</div><div class="l" data-page-node-id="ecOUrBdxaFVRFO9Zvv9nP9">现状分位（越低空间越大）</div></div>
+  </div>
+
+  <div class="chart" data-page-node-id="RQngCFG3qQmuVIlASBUU92">
+    <h4 data-page-node-id="DjVT8wtO2BKirA2JAIqgwV">资产清单（9 项）</h4>
+    <table data-page-node-id="4PgU6ncJVChSfo6giKzUYe">
+      <tr data-page-node-id="aUSVmBb5IOXB9FCkbBj2tf"><th data-page-node-id="PsLLH36zRKUKGkmdcAt94c">资产</th><th data-page-node-id="lqz3vmtmdTymHpaIFMUOVd">权重</th><th data-page-node-id="2M8jEzolC99610czpfrO9t">证据</th><th data-page-node-id="ENPY6jr68rdkGwHTjiLcEA">半衰期</th><th data-page-node-id="wIpqG8fVbSVRq1n7XWpHFg">可迁移性</th></tr>
+      <tr data-page-node-id="REBG9xNfXZ9XRz0jYiiOdG"><td data-page-node-id="UrCqCruvzOxKn9eae2j6aB">会计/经济学科底子</td><td data-page-node-id="S6XnQ8qveDrl2R5T5dklFq">12%</td><td data-page-node-id="MJsN2rCu8S7QlDnfLLxLFn">某财经类院校会计本科+ 某香港高校经济硕士</td><td data-page-node-id="YRDK5oIxhuWsrBuMXVAqY1">长（学科知识不贬值，但会计实务需续），半衰期长</td><td data-page-node-id="PbNbxpP6eF17NL9DOys0DH">高——是理解基金NAV、财务报表、对账的地基</td></tr><tr data-page-node-id="kYD0OWxCCCvTkVYR1Xp9Br"><td data-page-node-id="f8O9B6BDxzRqETDCGId2Ox">基金运营实务（NAV复核/LPF-OFC设立）</td><td data-page-node-id="TprtOSC88HjX2SgG56t70X">18%</td><td data-page-node-id="zjSe1dBw55HGX0Z7gNHAuA">某基金平台 现职：基金设立与持续运营、NAV复核（非独立计算）</td><td data-page-node-id="744o7psDAmiPrN3MuBOQt2">中——依赖持续接触，脱离平台会退化</td><td data-page-node-id="aJKTsAUWkw6S4i6Te7igRp">高——这是主线，市场上运营岗的硬门槛</td></tr><tr data-page-node-id="bKRbY4SUkmqLgUPw7EsB5h"><td data-page-node-id="mDQK1qe7JsAPxNEXqGD09z">流程自动化/日结自动化（AI辅助）</td><td data-page-node-id="9hENKjUP2p5PGE8IQVBCs6">20%</td><td data-page-node-id="QVuWz6GGU5kQf2yg31ayGR">用AI做了日结自动化程序，同事在用，出错时负责维护</td><td data-page-node-id="6NHEYQqRJ9zAIvIekLiBcP">短-中——工具更新快，但方法论可迁移</td><td data-page-node-id="j9yApGJ721fmkjnAJ0AeFh">高——这是AI时代的差异化项，但要'翻译'成业务价值</td></tr><tr data-page-node-id="zECi01aemncBl75WoXuiVa"><td data-page-node-id="s4alblSCds6d4AfwQxomTg">财务分析/报表分析</td><td data-page-node-id="oHC86NRXXcIkF8tIikqAkg">8%</td><td data-page-node-id="X0571q3Px2ltxm6QspxT2Z">某财务软件公司财务BP实习（损益预测、差异分析）+ 技能标签</td><td data-page-node-id="bi7H2jwHej5lQWOSUcBjtw">中</td><td data-page-node-id="arcWQX5gEHQJzIunYRtJ1N">中——运营岗的辅助能力，不是主线</td></tr><tr data-page-node-id="me7n6jF3oaSgKtojsdSuR3"><td data-page-node-id="wOkznXWBqaHJCAGZFxpyfH">审计/尽调</td><td data-page-node-id="0CB6noGMwJuBdheueuXB7B">6%</td><td data-page-node-id="mgq9Ca43jSGLS0J7bfFg6B">某四大审计实习 + 某券商证券IPO尽调实习 + 某商业银行农商行</td><td data-page-node-id="DeFqfDFaMWRg4L8rIfTJZ3">中</td><td data-page-node-id="CBJyWP3wUHwZFHEPcy4ZpD">中——能读懂审计口径、函证、核查，但不走财务主线</td></tr><tr data-page-node-id="Rs2Ajmq417lBwuO1J9PuLC"><td data-page-node-id="PmcZyHi8FJU1tA3YHTlRuJ">Python/SQL/Excel</td><td data-page-node-id="eQBHyh8w7aitDXgMpTP85L">10%</td><td data-page-node-id="lCGWbMbpR60G0i2p7HcQbL">Python学过但忘较多、SQL练过、Excel熟（技能标签）</td><td data-page-node-id="grWl2KB7ytE1bSt0gZwH5G">短——不练就退化</td><td data-page-node-id="p6BPfSEvGa4sbfejVFccUw">中-高——自动化/数据分析岗的加分项</td></tr><tr data-page-node-id="JhbbzDhVpq4BpRCq8ADmXj"><td data-page-node-id="fy7TnkMFMaolQ04zWtpkRi">牌照（香港证券从业资格考试）</td><td data-page-node-id="DxCPa9P1b0YRrG8my6eFbj">8%</td><td data-page-node-id="fsCzVQdiFV4tgXNmwRbrFw">正在备考（近期考试）</td><td data-page-node-id="7F0qslAnODHDP2F4QOEzOL">中——考过即长期有效</td><td data-page-node-id="sPEFEuOEOZq9Ix8BhSNOrZ">中——SFC牌照岗的门槛，通过后是硬资产</td></tr><tr data-page-node-id="xvG8GTaQBWHOaqW5wyFObt"><td data-page-node-id="UIzeoqyOuChMDy9gMwFwWU">英文能力</td><td data-page-node-id="YXQNCBGpQgbBQ9p4EfMNzY">6%</td><td data-page-node-id="dXoyamOX3AoirPYtlLbRma">英语水平一般（备考提升中）</td><td data-page-node-id="4DNfMsWxI8GqG1BnZmv779">中</td><td data-page-node-id="uOoHJSly0Ls6utWY2tjcfP">高——香港金融岗普遍要求，当前是短板</td></tr><tr data-page-node-id="ZaOmQljeJC5WJblL1DZrH3"><td data-page-node-id="JxHAyC1wAFDZYYHUT4DPfH">香港金融机构实习广度</td><td data-page-node-id="ezAnap3A7rZ5ml8kBFFazz">8%</td><td data-page-node-id="PyP64XpVvF2g5hGVtRggNX">某券商销售支持 + 某数字资产机构运营 + 多家金融机构实习</td><td data-page-node-id="vDYZQCWSD5cqaJhvbyjQE5">中</td><td data-page-node-id="HEc9Ce4QLxJjxRlz5aBbsg">中——了解行业语言，但实习不等于深入</td></tr><tr data-page-node-id="0TelOLjLA1wDFpgOSK7rLI"><td data-page-node-id="hNwE04iiigd0UG3JQIttxE">经济学硕士（量化/研究底子）</td><td data-page-node-id="OQfwIvBaybQ7CSMJXyiDPT">4%</td><td data-page-node-id="OZBtTepKn64exZOxE7C58S">某香港高校经济硕士</td><td data-page-node-id="OG9h6a8uAgV8ZU3AGOUd3x">中</td><td data-page-node-id="Bcu5pAohKnwKlhlNQcQvBg">中——研究/分析岗的门票，但非主线</td></tr>
+    </table>
+    <p class="note" data-page-node-id="Iz6D3SOJ2SZYwwCyywQkL1"><span class="flag" data-page-node-id="0vpNVyizhSaRhKMi0dhbt1">⚠</span> 标注「实习级」的资产（财务分析、审计尽调、Python/SQL）不能写成独立负责能力；「已证（范围待细化）」的 NAV 复核要写清是复核非独立计算。</p>
+  </div>
+</section>
+
+<!-- 03 通道验证 -->
+<section data-page-node-id="CPOprIGPwMQlCtYdeM1ePO">
+  <h2 class="sec" data-page-node-id="HTH96eDrT71N8q28YSO440"><span class="no" data-page-node-id="a8kspfKSr2nGQrW2KugZGt">03</span>通道验证：会计/运营出身的人，实际去了哪</h2>
+  <p class="sec-sub" data-page-node-id="0NnU27tzOL1VG3SbkMcXbV">数据源：你的 304 人合格样本（会计/审计出身 107 人）+ 234 人公开履历样本（交叉引用）。</p>
+
+  <div class="chart" data-page-node-id="79dAmQYh3r61iroAu4OwNC">
+    <h4 data-page-node-id="ts6nm6jU3e4jMRCFodF2Ir">会计/审计出身 → 现职去向（107 人）</h4>
+    <div class="bar-row" data-page-node-id="P7OuqkT3ttmDHfecW2ItfB">
+          <div class="bar-label" data-page-node-id="3ZEbKfh8k8N3rpQ407qZv9">投资/研究/交易</div>
+          <div class="bar-track" data-page-node-id="fCsPDnZNPi0Ke5yZRxNop1"><div class="bar-fill" style="width:100%;background:var(--accent)" data-page-node-id="eZpcLECsHJUkmi0R1v6m14"></div></div>
+          <div class="bar-val" data-page-node-id="VGNA5nmROwWpjWTuImzhAi">37</div></div><div class="bar-row" data-page-node-id="slAaKBg4iKrzYnFqNSfI7N">
+          <div class="bar-label" data-page-node-id="oEXu1a6yGJPbqVGl87DFqn">财务/审计</div>
+          <div class="bar-track" data-page-node-id="qjxvZ0xmckDD1advpUyzGn"><div class="bar-fill" style="width:11%;background:var(--accent)" data-page-node-id="MlEZd52EtiDZ6JrRxBk6I7"></div></div>
+          <div class="bar-val" data-page-node-id="UV6sRhoZbiVOirMPQt5hIB">4</div></div><div class="bar-row" data-page-node-id="IJ9uPSg07dnfy1cirecDel">
+          <div class="bar-label" data-page-node-id="zrxjGEonailejddtJCaBaq">销售/客户/财富</div>
+          <div class="bar-track" data-page-node-id="qSkouYWDZrnAUdDaYSBltN"><div class="bar-fill" style="width:24%;background:var(--accent)" data-page-node-id="qlbU1IL8cIT3J59VwqpU7D"></div></div>
+          <div class="bar-val" data-page-node-id="u6803rTHODcRLOcxmOvN6x">9</div></div><div class="bar-row" data-page-node-id="bRziRisAlwcHW3435vdqQo">
+          <div class="bar-label" data-page-node-id="GK8FZiA0Gp7sUHPgHyJzFQ">科技/数据/产品</div>
+          <div class="bar-track" data-page-node-id="fuSVgAPlig1DCYDDk7acnd"><div class="bar-fill" style="width:43%;background:var(--accent)" data-page-node-id="1jyib97lzmYCui3GLog7SY"></div></div>
+          <div class="bar-val" data-page-node-id="4gGq88W8XfxbIQJ4mDrFcT">16</div></div><div class="bar-row" data-page-node-id="pjJ3LPu6CBXQyT0mArgMS4">
+          <div class="bar-label" data-page-node-id="RqYAiEytxWvRvMMFYFj3l2">基金运营</div>
+          <div class="bar-track" data-page-node-id="GbHUhLzuqaFA1hP2GhkEin"><div class="bar-fill" style="width:16%;background:var(--accent)" data-page-node-id="BBY5wMh3u7nfsywWBbohi6"></div></div>
+          <div class="bar-val" data-page-node-id="JKjCDpHgpBr2dJycAmCIkO">6</div></div><div class="bar-row" data-page-node-id="s99a5sRft8T0CcwFQEAM98">
+          <div class="bar-label" data-page-node-id="AAcHPJGHJCLo5hl9g29Qen">其他</div>
+          <div class="bar-track" data-page-node-id="Xddxne1D3awpDqZEIULVzD"><div class="bar-fill" style="width:68%;background:var(--accent)" data-page-node-id="fXYtBR2Oz0oEFLnC7Q4sHB"></div></div>
+          <div class="bar-val" data-page-node-id="9nlW8haM4if9xeOlC4k9bt">25</div></div><div class="bar-row" data-page-node-id="7fFG0t6sHf7MA37MJSiKkD">
+          <div class="bar-label" data-page-node-id="PUaA2jXUE6tUW0rlHP4UDH">中后台(风险/结算/交易支持)</div>
+          <div class="bar-track" data-page-node-id="k83FYbytd1fZypG0GeEF1T"><div class="bar-fill" style="width:27%;background:var(--accent)" data-page-node-id="GlWIX0OO0bTYTVRhwafMqT"></div></div>
+          <div class="bar-val" data-page-node-id="RQJgjPkoySqneGj70v9Y0s">10</div></div>
+    <p class="note" data-page-node-id="ETIhGq1dsmHbMhWFe5HrAq">关键发现：会计出身的人<b data-page-node-id="BjKY0KYuJXnKnFglZOM1XK">最多去了投资/研究/交易</b>，而不是继续做财务（仅 4 人）或基金运营（6 人）。说明「会计 → 转离纯财务」是主流，但多数转了投研/交易（偏资深、竞争激烈），<b data-page-node-id="GCqHU1x4t4WrNcy2wC5kfB">基金运营是少有人走的窄门</b>，反而避开红海。</p>
+  </div>
+
+  <div class="chart" data-page-node-id="QaHbRvUNEV4A2jHqw9pgMP">
+    <h4 data-page-node-id="TfQsKtdzqltByvPxvI68Z4">对照案例：某财经类院校会计背景的 13 人走了什么路</h4>
+    <p class="note" data-page-node-id="c7SHtFSlqCGAyvzyT1JbDB">最贴合的对照是 <b data-page-node-id="b3g9dBUFSCqM0JDDBn3wMU">案例 A</b>：某财经类院校会计本科 → 某香港高校会计硕士 → 四大审计 → 基金会计 → <b data-page-node-id="M9JVGRSML4NOc1Vg1YR5XF">Finance &amp; Fund Operations Manager</b>（约 8 年）。这是一条可复现的「会计 → 四大 → 基金运营」路径，你的背景与之高度同构。</p>
+  </div>
+</section>
+
+<!-- 04 上下限推演 -->
+<section data-page-node-id="gxIpC6oU4Radald9n0iqqv">
+  <h2 class="sec" data-page-node-id="sQj48KOWJpieHnQ7B2Swxr"><span class="no" data-page-node-id="Z6An8QyO1WlrNtQLzXMlCR">04</span>上下限推演：不同路径，你的地板和天花板</h2>
+  <p class="sec-sub" data-page-node-id="Z6JNsJRAZFJ7g1etDAl07L">按候选路径拆分 149 条正常薪资（打标签规则见附录）。每条路径给「P10 保守下限 / P50 基准 / P90 激进上限」。样本 &lt;5 的路径仅作参考，不下硬结论。</p>
+
+  <div class="chart" data-page-node-id="BF39Grk3WqfI4qMJwqPImU">
+    <h4 data-page-node-id="WAwr3C5IqLDTA2JBCehyrw">五条路径的薪资区间（横轴：港元月薪，红线 = 你的 当前月薪）</h4>
+    <svg viewBox='0 0 620 240' style='width:100%;display:block' data-page-node-id="gqsfEYHqAOrWX0ceGEMI3n"><line x1='242' y1='12' x2='242' y2='232' stroke='var(--line)' stroke-dasharray='3,3' data-page-node-id="8jMHyupEGhvcBbF93XlCcF"/><line x1='355' y1='12' x2='355' y2='232' stroke='var(--line)' stroke-dasharray='3,3' data-page-node-id="9cQPuPxSzlQa56oAdPe3hc"/><line x1='468' y1='12' x2='468' y2='232' stroke='var(--line)' stroke-dasharray='3,3' data-page-node-id="xdqGavEeMBuhqTQWAnbu25"/><text x='130' y='238' font-size='10' fill='var(--secondary)' data-page-node-id="NubcMRXZYVrqxGbEnzB3xr">0</text><text x='242' y='238' font-size='10' fill='var(--secondary)' text-anchor='middle' data-page-node-id="Rxg7k2RPs8CPcAv4RVc4WX">25k</text><text x='355' y='238' font-size='10' fill='var(--secondary)' text-anchor='middle' data-page-node-id="Ub22mY33qPVLqCS8cm6A2x">50k</text><text x='468' y='238' font-size='10' fill='var(--secondary)' text-anchor='middle' data-page-node-id="ZGixRoKQh2HM0n01Xvq31B">75k</text><text x='580' y='238' font-size='10' fill='var(--secondary)' text-anchor='middle' data-page-node-id="l17vle1Bgn1Tb0GrhlLElJ">100k</text><line x1='229' y1='12' x2='229' y2='232' stroke='var(--negative)' stroke-width='1.5' stroke-dasharray='6,3' data-page-node-id="qeADT05fZ1knJ7mdGgV5Ko"/><text x='229' y='22' font-size='11' fill='var(--negative)' text-anchor='middle' font-weight='700' data-page-node-id="iBEn6xU9rFAlrmqg8Geb3k">你当前月薪</text><text x='120' y='28' text-anchor='end' font-size='12' fill='var(--secondary)' data-page-node-id="DRbZPI551JHWlCfl7CdIix">基金运营纵深</text>
+        <rect x='227' y='18' width='153' height='14' rx='3' fill='var(--accent)' fill-opacity='0.28' data-page-node-id="OwR5RtpKFhjITOF92utAaF"/>
+        <rect x='227' y='18' width='153' height='14' rx='3' fill='none' stroke='var(--accent)' stroke-width='1' data-page-node-id="qUAQYLODtmHqIYQsepEpGO"/>
+        <line x1='310' y1='15' x2='310' y2='35' stroke='var(--accent)' stroke-width='2' data-page-node-id="eKPevFyXLLX1ZFD1mR0uyN"/>
+        <text x='227' y='48' text-anchor='start' font-size='11' fill='var(--secondary)' data-page-node-id="DTCSgcYWOml3DdbSjSFwFY">21,500</text>
+        <text x='310' y='48' text-anchor='middle' font-size='11' fill='var(--text)' font-weight='600' data-page-node-id="Z3FTN4YReVTa4y3llK1HQ6">40,000</text>
+        <text x='380' y='48' text-anchor='end' font-size='11' fill='var(--secondary)' data-page-node-id="evhdv5oXKpEBaOYjnP732K">55,500</text><text x='120' y='70' text-anchor='end' font-size='12' fill='var(--secondary)' data-page-node-id="1vEBLwtIsUNtIgUhU3dnkw">自动化×FinTech</text>
+        <rect x='384' y='60' width='54' height='14' rx='3' fill='var(--c3)' fill-opacity='0.28' data-page-node-id="IExDNGjQR1e5Hoo1da9K5n"/>
+        <rect x='384' y='60' width='54' height='14' rx='3' fill='none' stroke='var(--c3)' stroke-width='1' data-page-node-id="oAIdmDDgsFiA9R7dQzvCdw"/>
+        <line x1='411' y1='57' x2='411' y2='77' stroke='var(--c3)' stroke-width='2' data-page-node-id="bmguUk2GMB1T0HMndfbnKk"/>
+        <text x='384' y='90' text-anchor='start' font-size='11' fill='var(--secondary)' data-page-node-id="guqv7BAxJ8yoxxJorzVjXw">56,500</text>
+        <text x='411' y='90' text-anchor='middle' font-size='11' fill='var(--text)' font-weight='600' data-page-node-id="rz4PnOJCkHCT9z6ZZVDs2i">62,500</text>
+        <text x='438' y='90' text-anchor='end' font-size='11' fill='var(--secondary)' data-page-node-id="unhWnaNDe3yoPMuuuoumQF">68,500</text><text x='120' y='112' text-anchor='end' font-size='12' fill='var(--secondary)' data-page-node-id="G9SCStdxEKLuFTjTYHrqqZ">产品设立</text>
+        <rect x='400' y='102' width='2' height='14' rx='3' fill='var(--c2)' fill-opacity='0.28' data-page-node-id="rGqoGcKk8T8XgX1SMiBWgc"/>
+        <rect x='400' y='102' width='2' height='14' rx='3' fill='none' stroke='var(--c2)' stroke-width='1' data-page-node-id="LXicENnttokZUESjEPxJFu"/>
+        <line x1='400' y1='99' x2='400' y2='119' stroke='var(--c2)' stroke-width='2' data-page-node-id="rW401woz0VUT5pEhzCaw6S"/>
+        <text x='400' y='132' text-anchor='start' font-size='11' fill='var(--secondary)' data-page-node-id="Fo2cELirbsp7OzN8et2nMJ">60,000</text>
+        <text x='400' y='132' text-anchor='middle' font-size='11' fill='var(--text)' font-weight='600' data-page-node-id="XyG7oKoCRO8wAjFu4iWx19">60,000</text>
+        <text x='400' y='132' text-anchor='end' font-size='11' fill='var(--secondary)' data-page-node-id="hrGBL3eLSG8F68Ht7vOrOX">60,000</text><text x='120' y='154' text-anchor='end' font-size='12' fill='var(--secondary)' data-page-node-id="WPZgb57oRGCSdY3q7FgQc7">风险/交易支持</text>
+        <rect x='237' y='144' width='72' height='14' rx='3' fill='var(--c4)' fill-opacity='0.28' data-page-node-id="0BnBojjjBWfHjZTUOEthci"/>
+        <rect x='237' y='144' width='72' height='14' rx='3' fill='none' stroke='var(--c4)' stroke-width='1' data-page-node-id="69HrwjKIvNqcatUJNhTZQv"/>
+        <line x1='282' y1='141' x2='282' y2='161' stroke='var(--c4)' stroke-width='2' data-page-node-id="RXxYjoidiueYjJHLNRvoFF"/>
+        <text x='237' y='174' text-anchor='start' font-size='11' fill='var(--secondary)' data-page-node-id="dEHmfbr15s09WfucsuvNx4">23,850</text>
+        <text x='282' y='174' text-anchor='middle' font-size='11' fill='var(--text)' font-weight='600' data-page-node-id="XQuJHMdf1xw3SlxfyYxfNu">33,750</text>
+        <text x='309' y='174' text-anchor='end' font-size='11' fill='var(--secondary)' data-page-node-id="fxF8QprDxT2CYbT02EQ3hv">39,750</text></svg>
+    <p class="note" data-page-node-id="e4CYwHHqlOpGk6OJUGKg8Q">三条高样本路径中：<b data-page-node-id="I3zW2GH4fJcswRIKTJcRFB">P1 基金运营（29 条）</b>是你的主场，P50=40,000 意味着走通就能接近翻倍；<b data-page-node-id="mZS30cvwh9j5dLPZHknvsf">P4 风险/交易支持（8 条）</b>基准 33,750 也明显高于现状。P2/P3/P5 样本太少（各 0-2 条），说明「自动化/产品/BA」在公开 JD 里<b data-page-node-id="7UQ5e2Vm4F4dEgPjxidjV0">稀缺</b>——它们更多是运营岗的加分项，而非独立岗位。</p>
+  </div>
+
+  <div class="chart" data-page-node-id="0gaEqK7VC4SyBRLnMh5FRm">
+    <h4 data-page-node-id="GlCJKMGF4JN2euqafrZyE5">三条情景：你 3 年后可能落在哪</h4>
+    <table data-page-node-id="5RBub9RiVjNZdc66pwsxA2">
+      <tr data-page-node-id="jMJGsva5FQwXMD7E4FPX3F"><th data-page-node-id="WfKMqLF0IgDIljSplQVAH0">情景</th><th data-page-node-id="OdXVGRwRqAP578J7yMh7h8">3 年后月薪</th><th data-page-node-id="z37vWu7TMZm95Vs5wWeOFF">前提条件</th><th data-page-node-id="5pg7zzqrMaxqI3Syuxz97o">对应路径</th></tr>
+      <tr data-page-node-id="2VrPua6oG491fp1Tqspf17"><td data-page-node-id="69ETackWCAdGhgncC5onMH"><b data-page-node-id="WBUaWxKBdSFPOPD4JrsG3A">保守下限</b></td><td data-page-node-id="9CEWzn5DtgRsgou0QQrqEE">27,500 左右</td><td data-page-node-id="4AJsNly1bR2xCM4Bt4IvHZ">只守住现职、未实质扩权，随通胀/常规调薪小幅上移</td><td data-page-node-id="dDy2mVRj1H13UGAkLHXxth">停留在 P1 的 P25 以下</td></tr>
+      <tr data-page-node-id="UDMDEoBJ4LSmfqJ5HNMlp7"><td data-page-node-id="uIyDH1e3yoLsB2PxVMkCaW"><b data-page-node-id="oVFCyCqEmDdNvrEle7BVuU">基准</b></td><td data-page-node-id="SoNTvMOJLGu3EJOia6xlD8">42,500 左右</td><td data-page-node-id="fOkGqEipaQ2SdH2ExQZ2W4">走通 P1 运营纵深，从 NAV 复核扩大到独立负责一段生命周期</td><td data-page-node-id="owhBoZ633EY5O42sDGbGMl">P1 的 P50</td></tr>
+      <tr data-page-node-id="sD4D4DXer5arLRrdSlSVS0"><td data-page-node-id="mHCIbOTBoNTZ6MPpkedGfE"><b data-page-node-id="RZSdZcomfnqLweqtqPsGa3">激进上限</b></td><td data-page-node-id="EqhntsL0JHye7G2h3MjCKc">60,000 左右</td><td data-page-node-id="pDLVu2zDCY24mfwTov6SJq">运营纵深 + 自动化差异化，进入大机构或拿下更大收口权</td><td data-page-node-id="CWaAU61MElMehGfAmHFYHr">P1 的 P75-P90</td></tr>
+    </table>
+    <p class="note" data-page-node-id="ZqaOGLbjpFelqoDsZBmvbN"><span class="flag" data-page-node-id="08hxAbFAEOuPJyjYn7ONEc">⚠</span> 这是「市场价区间」推演，不是承诺。能否到达取决于走通哪条路、走多快，以及英文、牌照、扩权三个变量。某目标薪资 这个数本身已经不重要——它落在「保守」和「基准」之间，是必然经过的一个点，而不是终点。</p>
+  </div>
+
+  <div class="chart" data-page-node-id="AqJENjcI6DgfFy3GPT2CoV">
+    <h4 data-page-node-id="VHw0O0B1Ryybqnf4Rpe1Fa">长期天花板：每条路径最终能爬多高</h4>
+    <table data-page-node-id="cHny5u0o9JFjGdkZlUoVZ1">
+      <tr data-page-node-id="3cJG7w1UHODu6J0d8kp297"><th data-page-node-id="MDEKwTYj5xn0HaUNLFwbU2">路径</th><th data-page-node-id="Gw0GMGdSvgVPTwplBtThxg">天花板画像</th><th data-page-node-id="DDOBiQk9JvdHF589V5xRGa">到达年限（估）</th><th data-page-node-id="duyeW0qgAmVuGgGQiwxrER">月薪量级</th></tr>
+      <tr data-page-node-id="GpNis14cF1AgrwWKATXxiQ"><td data-page-node-id="Sb5TYjJH893jMOCUXeH74v">P1 基金运营纵深</td><td data-page-node-id="UDBZYnpocmcQ4Wl16pdLYQ">Fund Operations Manager → Head of Ops</td><td data-page-node-id="H1h07lw6JmfLSBqUzFt8at">8 年+</td><td data-page-node-id="mZ6uvUSao0k7CbqTt9PI9X">55-100k</td></tr>
+      <tr data-page-node-id="r6d1R2yQsbRbekU5WllDEg"><td data-page-node-id="GAXL6HSnsn0guxQxfMJcyT">P2 自动化×FinTech</td><td data-page-node-id="uvWfv0uX8G3sBzioKBIysG">流程自动化 Lead / 数字化负责人</td><td data-page-node-id="VMw5yIy4FuvreL5AiuLBGE">5-7 年</td><td data-page-node-id="a6Ti5yAj30rip3KQUgmS8N">55-70k（样本稀缺，存疑）</td></tr>
+      <tr data-page-node-id="GH6u3mUqagqSmcEp5kd36L"><td data-page-node-id="2gEXp4Ja7EUKichGB8qRN0">P3 产品设立</td><td data-page-node-id="DHywEnWjzxf49tMjWUSn03">基金产品/设立负责人</td><td data-page-node-id="b1LYHqFsdfZPtnPhSGuykG">6-8 年</td><td data-page-node-id="5eci4TI84DpUF2EngUy1L6">60k+（样本稀缺）</td></tr>
+      <tr data-page-node-id="yFCMEE2VUuFMsA4qXTQ29I"><td data-page-node-id="lYJ4YL0KC1luzcV7s6Qr2f">P4 风险/交易支持</td><td data-page-node-id="q1yjZRuBqamC9xVSSIHqGZ">中台 Head / 交易运营负责人</td><td data-page-node-id="cGg2ikVVorE3kCAyS0pKxl">7-10 年</td><td data-page-node-id="BQFgT6e1ZKSbnHQjlJUzyh">50-100k</td></tr>
+      <tr data-page-node-id="ndTbPjDzjZyg4YpY6PtHGM"><td data-page-node-id="spe3ibTST4BhNN4R2A2APq">P5 金融BA/实施</td><td data-page-node-id="zBjd0mmEQVIZPN3izDYdzS">资深 BA / 项目负责人</td><td data-page-node-id="dScOujkK6euPpAGFGhdXiN">5-7 年</td><td data-page-node-id="9NK5Gf9VOGtPHkCGnEcHIO">70-95k（样本稀缺）</td></tr>
+    </table>
+    <p class="note" data-page-node-id="GVleepJfukqt6KRytI1o1A">天花板排序 ≠ 复合分排序。P4 天花板高但保值率低（你的会计/运营资产部分用不上）；P1 天花板中等但保值率最高、可立即执行。二者是「赔率 vs 胜率」的权衡。</p>
+  </div>
+</section>
+
+<!-- 05 决策矩阵 -->
+<section data-page-node-id="cRgrHswiW3CnxTQkk1e3UC">
+  <h2 class="sec" data-page-node-id="MBfjfGC7PGHcrQy9hVYkoW"><span class="no" data-page-node-id="jqKNZ8Kz7Js0f8kciOX8U4">05</span>决策矩阵：五条路径的赔率 × 胜率</h2>
+  <p class="sec-sub" data-page-node-id="q9TwQ2pVToYJUKHFCyeWRQ">保值率 &lt; 50% 或违反硬约束的路径出局。存活路径按复合分排序，每条附薪资区间（P50 基准 / P90 上限）。</p>
+
+  
+  <div class="path" data-page-node-id="1F42siEpEBPDbea2XYhHYQ">
+    <div class="ph" data-page-node-id="AtqUCL5WspNyeVL6WqKZTr"><div class="score" data-page-node-id="HK7LajYEcvZWTrGmtP57gE">78</div>
+      <div data-page-node-id="n13MRAUyTGXaMkLp2ADDFZ"><h3 data-page-node-id="rFUJh4CcbwsEaGYHjgBEJd">基金运营纵深（Fund Operations）</h3><div class="meta" data-page-node-id="raTZof7tcSVyWDq5MMksAZ">在现职基础上扩大负责范围：从NAV复核走向独立收口、管一段完整生命周期</div></div></div>
+    <div class="dims" data-page-node-id="L2HBvexFUxy74HgxbE8FbU">
+      <div class="dim" data-page-node-id="zAhZ4n0yWHz0x15OTRLvm6"><div class="v" data-page-node-id="Ufdi7RXxffyKB8Er4L4i3d">84</div><div class="l" data-page-node-id="xlIZ8J3Nf5j7OoROThj7Nl">保值率</div></div>
+      <div class="dim" data-page-node-id="CAkfo71rLVsD1bEePcDWW0"><div class="v" data-page-node-id="yXn270vR8QLcFsFrDg3g88">82</div><div class="l" data-page-node-id="alFi1aqBijRJk4oZVEBveH">可行性</div></div>
+      <div class="dim" data-page-node-id="7Qc8vaDPGkiv5z6qOoLX07"><div class="v" data-page-node-id="UbQf3okysWVnJx4ZG9MCXf">68</div><div class="l" data-page-node-id="IJghoLzguD5vvxxle8q42k">天花板</div></div>
+      <div class="dim" data-page-node-id="nblhgRQS6oqQYxXiE4RQYs"><div class="v" data-page-node-id="Vwoa22zyYK1ZvVOBFekaSk">60</div><div class="l" data-page-node-id="v83NkNyUVr9GvZsBGbTjkg">期权</div></div>
+      <div class="dim" data-page-node-id="MuEi4d5uR7XJzqrjFKA6dQ"><div class="v" data-page-node-id="bqsfFjj2n3fO97H1tXabhx">85</div><div class="l" data-page-node-id="uA47OFOIwOGhgJz5EKzHpL">适配</div></div>
+    </div>
+    <p class='note' data-page-node-id="UTYzY3G7lLZsdHZXS68ED9"><b data-page-node-id="2vDEJFeW6tIOkKTnSbtVSx">薪资区间</b>（样本 29 条）：保守 21,500 / 基准 40,000 / 激进 55,500</p>
+    <p class="note" data-page-node-id="CtaZAzFSPztQpV1mBWRiVs">资产保留最高（运营实务18%+自动化20%+会计12%全用上）。可行性高：281条数据中基金运营/结算岗需求真实存在，且你已在岗。天花板中：运营到Head of Ops需要8年+。</p>
+    <p class="note" data-page-node-id="WB3yqZOMxZIh1XfjUoKzGW"><b data-page-node-id="T0IK3tUuJMG8AdKFBkosOm">依据：</b>281条岗位中 funds-management 71条 + settlements 11条；技能关键词 reconciliation 33次、nav 17次。</p>
+  </div>
+  <div class="path" data-page-node-id="YPYOd0aF25EAYPcZAVO4oE">
+    <div class="ph" data-page-node-id="l4Y3K3dyHfd0iAWRHMOL4b"><div class="score" data-page-node-id="KQmHI5lDdgMgpxdOxhDCmT">71</div>
+      <div data-page-node-id="Nm0JeHBEQ3VPWSoAz35Ew0"><h3 data-page-node-id="6KvlegyLE46u1sKsVtmWCW">流程自动化/金融科技（Automation × FinTech）</h3><div class="meta" data-page-node-id="FagZ9e606whCZ7iSHlGjNw">把日结自动化放大为可复用的流程改造能力，走中后台自动化/数字化方向</div></div></div>
+    <div class="dims" data-page-node-id="voP3BwYvjbKVHZDte4A3ib">
+      <div class="dim" data-page-node-id="q5TIMs9BrdRUpmV59PpqjW"><div class="v" data-page-node-id="jYhMsXhTmqRe7BGkiBAkzv">72</div><div class="l" data-page-node-id="fbQCwmemNp36KCwuKUbRIf">保值率</div></div>
+      <div class="dim" data-page-node-id="2KYPflCIBGlpRlOCImh1JU"><div class="v" data-page-node-id="MsL6wo4rHCgS1ZcR1WTuon">55</div><div class="l" data-page-node-id="vaweF6BPjDKub5cs4echjG">可行性</div></div>
+      <div class="dim" data-page-node-id="ZUrpKe2YpPgPjSLavZxfIT"><div class="v" data-page-node-id="IoqMRnILUu8tPX6YGFoyFA">75</div><div class="l" data-page-node-id="wTOiY0PEkpWxyhfR1DqyCH">天花板</div></div>
+      <div class="dim" data-page-node-id="sM67YT8WAvEHSimVlxgMjn"><div class="v" data-page-node-id="pNHrBRGe1Wnt2WUAxjaBi8">85</div><div class="l" data-page-node-id="xWMOdyMCuiABSFuxTocZLr">期权</div></div>
+      <div class="dim" data-page-node-id="EqiSjijVSGY89DfaHwsHaD"><div class="v" data-page-node-id="rGJpFOWf8yg7ZF8lyoMgry">88</div><div class="l" data-page-node-id="42vXw7Q0hHSVBPSahhcc9v">适配</div></div>
+    </div>
+    <p class='note' data-page-node-id="XZCSsmX72uPqllKyG1xiXD"><b data-page-node-id="YS6sTAZE3HZQUGMa4yUAyk">薪资区间</b>（样本 2 条，仅参考）：保守 56,500 / 基准 62,500 / 激进 68,500</p>
+    <p class="note" data-page-node-id="4jYuDUqyF1vZjW0x0gucWP">自动化资产20%保留极高，但可行性中等：市场上'AI岗/自动化岗'少，需依附运营/中后台场景。天花板和期权价值高（AI是趋势）。个人适配最高。</p>
+    <p class="note" data-page-node-id="4MHSTlne3t66BukZmrQ7kL"><b data-page-node-id="Jy7hED5gxSUSbv67uV7EDU">依据：</b>281条中 automation 相关岗位少；skill命中 process improvement 14次、digital 31次。行业数据：51条JD仅3条明写AI(6%)。</p>
+  </div>
+  <div class="path" data-page-node-id="emdiFgPnmnMLwot939tUaZ">
+    <div class="ph" data-page-node-id="JMU3JTtdmlz2E5KljuNTZj"><div class="score" data-page-node-id="rFjD1CuDi8V4i22xmMDUyD">66</div>
+      <div data-page-node-id="U8Wnbp0nHzRzv3kLMCBEdH"><h3 data-page-node-id="lR4NLbWE1u2UdxuJjlG8CN">产品与基金设立（Product & Fund Setup）</h3><div class="meta" data-page-node-id="QTNTnhMPZojlLoC7Vr6VHo">依托LPF/OFC设立经验，走向基金产品/设立/合规日历方向</div></div></div>
+    <div class="dims" data-page-node-id="HcXt0Bhy5UZdUDQPXUMTZl">
+      <div class="dim" data-page-node-id="qZN5HgVwdJefxjTQ3tUuAc"><div class="v" data-page-node-id="9XOpCmB2LlIldSMnMRBMsp">66</div><div class="l" data-page-node-id="N0gzsLq5t3w4ukcUZjR22x">保值率</div></div>
+      <div class="dim" data-page-node-id="rowhPw7AemLQBKwYrfFY58"><div class="v" data-page-node-id="UUg0gnxTEoWEYwFauuAF11">58</div><div class="l" data-page-node-id="FxmmfXLdk11C1HDwLFOoth">可行性</div></div>
+      <div class="dim" data-page-node-id="qtyyaEG5qme3w15wIElUnd"><div class="v" data-page-node-id="9jwA6K6rsGgxeTHaGG2ipI">72</div><div class="l" data-page-node-id="6083gFByKIW0P0kpyDbEnn">天花板</div></div>
+      <div class="dim" data-page-node-id="158hqBNNqAqVFEpq21rgjA"><div class="v" data-page-node-id="Om8R9MUkU4lnDvvaEHfw7F">65</div><div class="l" data-page-node-id="RMWbKriyCEp4DhAJTJy0YF">期权</div></div>
+      <div class="dim" data-page-node-id="idiTd6wb8akRNLKsKvySAc"><div class="v" data-page-node-id="7J9diF1KWE6xkvIBwWxTPh">70</div><div class="l" data-page-node-id="xg3dm2nnrNaxO5jjgGHUGV">适配</div></div>
+    </div>
+    <p class='note' data-page-node-id="020VHWhjPWQNACW2ssCFyU"><b data-page-node-id="Ogwvp51MNNKP1kYmq5nxcC">薪资区间</b>（样本 2 条，仅参考）：保守 60,000 / 基准 60,000 / 激进 60,000</p>
+    <p class="note" data-page-node-id="3qpXTi3kdx4iaEY91HB0bP">LPF/OFC设立是现职资产，但公开JD里明写LPF/OFC仅12%（行业数据），可见度低，需主动翻译。天花板不错。</p>
+    <p class="note" data-page-node-id="ldH7Cs2lvPLytxPRe1oX6E"><b data-page-node-id="Yv5MgxMiOgV5SuFq1n36WV">依据：</b>行业数据：LPF 2026上半年新增406只超2025全年；但JD明写LPF/OFC仅12%。</p>
+  </div>
+  <div class="path" data-page-node-id="BerYg2tBU4Bl62ZXWg7FKk">
+    <div class="ph" data-page-node-id="zWFXLDZYtBYHoDaojdURwW"><div class="score" data-page-node-id="aiMVG8eigSLEJXuS7gmuqu">60</div>
+      <div data-page-node-id="BtjGkgSgutNN18gj4yhDMJ"><h3 data-page-node-id="5MXtm7s9ChXkiruyb5jKTt">风险/交易支持（Risk / Trade Support）</h3><div class="meta" data-page-node-id="EINDUHxbO7HSw2hfFwg5F6">向交易确认、结算、风险支持等中台岗发展，借会计+经济底子</div></div></div>
+    <div class="dims" data-page-node-id="qodO7lVxKNJl8C88YzFDe9">
+      <div class="dim" data-page-node-id="Yh9Yh8EggwTFOtKjqZWm5e"><div class="v" data-page-node-id="4p0BhPaitr4ryWFhgsXAlD">55</div><div class="l" data-page-node-id="JEqVMaEsUmR88gXFWYifwI">保值率</div></div>
+      <div class="dim" data-page-node-id="Aj8GUfWajaGRDDumrlfHIX"><div class="v" data-page-node-id="QckvA4ognyGtBCKoQwcBav">50</div><div class="l" data-page-node-id="q7JFQ9roylh2ZhcQyLdoBg">可行性</div></div>
+      <div class="dim" data-page-node-id="YalNZ9CnV6eWYf0Zrc0vbk"><div class="v" data-page-node-id="fAQq1QexuHgLAGEjuvFZDQ">78</div><div class="l" data-page-node-id="1BjDYVAHq2LH2C5gHFqT0a">天花板</div></div>
+      <div class="dim" data-page-node-id="E6IpkPmGg5DmZaBpcjHkyG"><div class="v" data-page-node-id="6UN01NOcBRBA95z89cHWkR">70</div><div class="l" data-page-node-id="C10FLbd7tCov5KjONjBy7q">期权</div></div>
+      <div class="dim" data-page-node-id="ammUR26Lyp9es3hmxuXvoc"><div class="v" data-page-node-id="v0Xd1JFGKBWvXu92acMrNJ">55</div><div class="l" data-page-node-id="tLAfqq3Mk5CbTBzXDzI9DX">适配</div></div>
+    </div>
+    <p class='note' data-page-node-id="IB3O65gpqgHE2SCtpZXcoB"><b data-page-node-id="4WbKulBgH4N1BcnzBVULle">薪资区间</b>（样本 8 条）：保守 23,850 / 基准 33,750 / 激进 39,750</p>
+    <p class="note" data-page-node-id="iHF7XKDQZxvgDyRmHpNAFK">天花板和期权不错（Point72等0-1年岗接受会计背景），但保值率中等（会计/运营资产部分用不上），且需补实操（结算、公司行动、SQL）。</p>
+    <p class="note" data-page-node-id="XsgvZtDc34ln6iWtfh9voK"><b data-page-node-id="ZggLMErWvFI5y4toFVBTLr">依据：</b>Point72 Trade Support 0-1年岗接受会计/经济专业；281条中 stockbroking-trading 25条。</p>
+  </div>
+  <div class="path" data-page-node-id="uMVm0nX4mEBIqMDCqd2t2E">
+    <div class="ph" data-page-node-id="A7Y6VBowJsiTsH5BsBWf6b"><div class="score" data-page-node-id="C2k3vPHg2vJ0nE4YIhO2M7">55</div>
+      <div data-page-node-id="mXnuHze1rJ9wU6bjMpCrfn"><h3 data-page-node-id="McVHejGAjocPka6Qvn2nN5">金融业务分析/实施（Finance BA / Implementation）</h3><div class="meta" data-page-node-id="igUjyqd6TXFZ5G7aN8n9xX">走向BA/系统实施，连接业务与IT</div></div></div>
+    <div class="dims" data-page-node-id="t12kjwXkHsdzSP6tBQBHqb">
+      <div class="dim" data-page-node-id="d7bvrdyk7fUyEFDRDFP9C0"><div class="v" data-page-node-id="HoBIVLoU0vdkIvjR5yfQT1">50</div><div class="l" data-page-node-id="2WZs1yoOaDZPzwkWJO68FT">保值率</div></div>
+      <div class="dim" data-page-node-id="CC8a7jS2wFyYCDoDidaG1N"><div class="v" data-page-node-id="334FFhOcZ79olFqjkUc7F0">45</div><div class="l" data-page-node-id="8qglJ7AjOa8JxSL7mTlFMO">可行性</div></div>
+      <div class="dim" data-page-node-id="tbg2dFFIAdIjz76k6CaYFL"><div class="v" data-page-node-id="Fkogz2eLaC39mdzz1AiwG2">70</div><div class="l" data-page-node-id="jHVfHceM6LkbQN4b97mU4e">天花板</div></div>
+      <div class="dim" data-page-node-id="lq1L8PyN5WJyu3uh4fPngN"><div class="v" data-page-node-id="ilSJIclKIrPXKhkcFwh9bc">65</div><div class="l" data-page-node-id="hnbSRyvnDqw69FgQQI7Xt3">期权</div></div>
+      <div class="dim" data-page-node-id="kQsYfe8LIESJuJUgmYnELe"><div class="v" data-page-node-id="o3WDddYi1yr4eQmTEoeaHD">62</div><div class="l" data-page-node-id="ykGIVv5NFOo0ecjpKIFtsR">适配</div></div>
+    </div>
+    <p class='note' data-page-node-id="rDykzL98xH9raY5ynHpC9t"><b data-page-node-id="hgM7pKbSOIEHmU7H74eydG">薪资区间：</b>样本不足，无可靠分位（见附录打标签口径）</p>
+    <p class="note" data-page-node-id="zpHAq0G6gV7I2HbLCa1L8x">自动化能力用得上，但'BA只能几年后考虑'（此前判断），且需补系统知识、需求分析。保值率临界50%。</p>
+    <p class="note" data-page-node-id="HurVGHlG2z9oQUferqI7Gu"><b data-page-node-id="OL13ewAS8b6SimimnkCU1U">依据：</b>此前研究：BA/实施线暂不补采集；HSBC BA Graduate 2027项目存在。</p>
+  </div>
+
+  <div class="chart" data-page-node-id="slWl5inwe8gWCN0gpnK70A">
+    <h4 data-page-node-id="jOiWN6R6eh1hT7cSyvay1Q">主线路径（P1 基金运营纵深）六维雷达</h4>
+    <svg viewBox='0 0 300 300' style='width:100%;max-width:320px;display:block;margin:0 auto' data-page-node-id="uyt8GbBAMrmAcBghWnGBYS"><polygon points='150.0,117.0 181.4,139.8 169.4,176.7 130.6,176.7 118.6,139.8' fill='none' stroke='var(--line)' stroke-width='1' data-page-node-id="eSUiHE5mxwDKHtOu6WHInW"/><polygon points='150.0,84.0 212.8,129.6 188.8,203.4 111.2,203.4 87.2,129.6' fill='none' stroke='var(--line)' stroke-width='1' data-page-node-id="H8CNyBcHcJV7MRZnF16R7F"/><polygon points='150.0,50.0 245.1,119.1 208.8,230.9 91.2,230.9 54.9,119.1' fill='none' stroke='var(--line)' stroke-width='1' data-page-node-id="0WkHu3WNAZKgZprSZcV5Ba"/><line x1='150' y1='150' x2='150.0' y2='50.0' stroke='var(--line)' stroke-width='1' data-page-node-id="oMD2wpF4Rshs4UiH7yYLlX"/><line x1='150' y1='150' x2='245.1' y2='119.1' stroke='var(--line)' stroke-width='1' data-page-node-id="uedfj8D4KmE1vvPAzq3jBI"/><line x1='150' y1='150' x2='208.8' y2='230.9' stroke='var(--line)' stroke-width='1' data-page-node-id="AbJ1X6TyHFHycEEHx8rRrP"/><line x1='150' y1='150' x2='91.2' y2='230.9' stroke='var(--line)' stroke-width='1' data-page-node-id="dFYmvNOpoveNtkumusUgJZ"/><line x1='150' y1='150' x2='54.9' y2='119.1' stroke='var(--line)' stroke-width='1' data-page-node-id="Lr0KmGscT81fq27JZpvJLJ"/><polygon points='150.0,66.0 228.0,124.7 190.0,205.0 114.7,198.5 69.2,123.7' fill='var(--accent)' fill-opacity='0.25' stroke='var(--accent)' stroke-width='2' data-page-node-id="NZJVKHXmP8aqfsqU8NvOKb"/><text x='150.0' y='28.0' text-anchor='middle' font-size='11' fill='var(--secondary)' data-page-node-id="RiyruceiruCcl6v3xl1qCe">保值率 84</text><text x='266.0' y='112.3' text-anchor='middle' font-size='11' fill='var(--secondary)' data-page-node-id="m4B2PioQpLe8OIQgTLKY1H">可行性 82</text><text x='221.7' y='248.7' text-anchor='middle' font-size='11' fill='var(--secondary)' data-page-node-id="fiNdLaFLAwkwDfyMY0j4Nh">天花板 68</text><text x='78.3' y='248.7' text-anchor='middle' font-size='11' fill='var(--secondary)' data-page-node-id="I8kVNY4lggijxsnpN00uoF">期权 60</text><text x='34.0' y='112.3' text-anchor='middle' font-size='11' fill='var(--secondary)' data-page-node-id="LoMyPKaFNtuKCWPVeZVdeW">适配 85</text></svg>
+    <p class="note" data-page-node-id="UAG1clNh1KnyIdrxqpRbIF">看形状不看大小：P1 无短板（五维均衡），是「可立即执行」的主线。P2 的期权/适配最高但可行性最低，是「第二曲线」而非主线。</p>
+  </div>
+
+  <div class="chart" data-page-node-id="JCTl2nWWQF9L9qBBluWVwc">
+    <h4 data-page-node-id="KghDbZtrHYzWesyTqvAJpy">出局路径（保留，证明评估过）</h4>
+    <table data-page-node-id="M1rOXbAcYCozCPts0LbDr6">
+      <tr data-page-node-id="kpMGDVtGIB8NX28Q3VZbSH"><th data-page-node-id="lFguO3fswwWY78ZxW6jEDH">路径</th><th data-page-node-id="kmd9XKJ4SXbkVB1KbQdM7l">出局原因</th></tr>
+      <tr data-page-node-id="TF7uaiafyXjW1yF2qBrt5N"><td class='tag-out' data-page-node-id="UkR5ATbpPVeyxRQM7GRgPm">纯财务线（P6）</td><td data-page-node-id="F8TqfdEPMARXCB2AvCwlnt">硬约束：用户明确不做纯会计/审计/税务/报表核算</td></tr><tr data-page-node-id="XnA8B95ivEnGcTHumDJtap"><td class='tag-out' data-page-node-id="WQvgeLPxB1jvVS7ZlbFpRi">机构销售/客户服务（P7）</td><td data-page-node-id="Qoq44Q27RE8VlU6FQVvmSL">保值率48%<50%，英文一般且非销售导向，个人适配低</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- 06 阶段门径 -->
+<section data-page-node-id="3CWDCagKEsL8AWsbO1oA9o">
+  <h2 class="sec" data-page-node-id="EO4KTUwa0RR3B7BYvCH8BX"><span class="no" data-page-node-id="gBuxNEDY3utkowK6ejpkmN">06</span>阶段门径：S0 → S3，每阶段带闸门</h2>
+  <p class="sec-sub" data-page-node-id="lMvwZg0GiBqJ1xLREiN6EX">规划不是时间表，是带闸门的决策序列。每阶段有「通过标准 + 出口闸门 + kill criteria + 回退分支」。</p>
+
+  <div class="phase" data-page-node-id="vkoRydv7k71zYOyJZ4dlgo"><h4 data-page-node-id="rZIsmzavqETKMHCzgkgWtH">S0 · 守住考试（现在 → 2026-10-27）</h4>
+    <ul data-page-node-id="2MmpTUhHW2PFgHCGe4gw3R"><li data-page-node-id="LJG1zyXCYyyskphH5zp9DB">通过标准：香港证券从业资格考试 通过。</li>
+    <li data-page-node-id="6dBkiCnkSwfogIYSIgx4sv">出口闸门：考完当天，从业资格考试 是否通过？</li>
+    <li data-page-node-id="Oy8gYZoFzacLuy8TNWRYcw">kill criteria：两次考期未过 → 转入回退（先不铺其他学习，集中复盘）。</li></ul>
+  </div>
+  <div class="phase" data-page-node-id="5Kv6pPxB6AgFLUEtKg3xWO"><h4 data-page-node-id="zZO8QYPABjurgaPnPh8glX">S1 · 补实操证据（2026-11 → 2027-02）</h4>
+    <ul data-page-node-id="ztyeWl9Ksq0WIxX0d2S4nC"><li data-page-node-id="rA447qfQo4UvlL8vBGKPUE">通过标准：把现职职责写成可核证据——NAV 复核范围、日结自动化的本人判断/AI实现/同事采用、减少多少人工。</li>
+    <li data-page-node-id="fFIT6zxIYVncu2cJEKGHZU">出口闸门：能否用三段式叙事讲清「我看资产质量 / 我看结构 / 我看监控」？</li>
+    <li data-page-node-id="M0snEWRE8CjcUayDRGdyRg">kill criteria：3 个月仍无法说清自己独立负责的环节 → 回退到 P2（自动化为主，降低对运营深度的依赖）。</li></ul>
+  </div>
+  <div class="phase" data-page-node-id="MrgHYpmZ6uEzMK59YkWDNZ"><h4 data-page-node-id="kC7pgC0c0yA41tMe167xAV">S2 · 扩大收口权（2027 上半年）</h4>
+    <ul data-page-node-id="VbnKicJzRUW5RQakf0zk7n"><li data-page-node-id="Y88R1MikzIiSw8SOKjCuA2">通过标准：在现职争取独立负责一段完整生命周期（一只基金从设立到清盘），或 TRS 若落地争取当 owner。</li>
+    <li data-page-node-id="1LFtL8o1qagfSjgQxwrGKC">出口闸门：是否已有「独立负责」的可陈述成果（不是「参与了」）？</li>
+    <li data-page-node-id="SX6CNKSNwOqhhytgOnr2CW">kill criteria：6 个月无实质扩权 → 考虑 P3（产品设立）或 P4（风险/交易支持）平移。</li></ul>
+  </div>
+  <div class="phase" data-page-node-id="ZUjr4unphsbacxEApezKDi"><h4 data-page-node-id="Tw6MN8rex0tgoTT1iU6DVj">S3 · 跳槽/升职（2027 下半年 → 2028）</h4>
+    <ul data-page-node-id="y8PLFrFuXWLbJDRmZh80XW"><li data-page-node-id="nD2TdNgQYBVt7Ae7p2rBEs">通过标准：以「扩大后的负责范围」对标 42,500 区间的岗位，拿到 offer 或内部升职。</li>
+    <li data-page-node-id="HUeUNc8aoS4jWSBNkjR8aj">出口闸门：拿到 offer 后，比现职涨薪 ≥ 30% 且职责扩大吗？</li>
+    <li data-page-node-id="UfZzHtCE4UT7zSL2kNBxpI">kill criteria：≥ 15 次面试无 offer → 回退补英文/技能，重审定位。</li></ul>
+  </div>
+</section>
+
+<!-- 07 待核项 -->
+<section data-page-node-id="rBfCiBLUZpiglfWwY89Ilv">
+  <h2 class="sec" data-page-node-id="UBViM8AJgbggO1sZYsTy3A"><span class="no" data-page-node-id="WyV1VMbVcdvJ7VUT0cAvmg">07</span>关键假设与待核项</h2>
+  <div class="chart" data-page-node-id="o7iqMA4EkJC2J4uzKCKhvK">
+    <table data-page-node-id="sskXkOP5WLEEhGnA2Bp4cC">
+      <tr data-page-node-id="ZpAP6TzM8fB8JEyud6evon"><th data-page-node-id="0FYIZ9pC7bCSQWTIqp8iUP">假设/缺口</th><th data-page-node-id="0Ju5Agl11sbJj7GuaycPKc">性质</th><th data-page-node-id="4VrZnVtCT8ewzMvPFFCzos">对策</th></tr>
+      <tr data-page-node-id="ExVZJ3W1r5lZIpMAJc9s02"><td data-page-node-id="78Y9STnwWy3Y6ynO3VzXmf">英文能力（英语水平一般（备考提升中））</td><td class="flag" data-page-node-id="otCw5Nffn1VQ5vQEeASaxK">需提升</td><td data-page-node-id="CaeJqoNuScoFzWuF6MEaVl">这是进入 42,500 以上岗位的隐性门槛，S1 起每周固定英文训练，重点写邮件+面试叙事</td></tr>
+      <tr data-page-node-id="cg5y9bOiWNgcFK8Nvk8Y3A"><td data-page-node-id="Tb4r8bFcxFpXFF7casXmWA">签证安排（IANG 续期/雇主担保）</td><td class="flag" data-page-node-id="Y9KAHQtXaG8JFBRFhr1EVs">待核</td><td data-page-node-id="2F0sAMH89ZZ2jKGbd0HrC8">换雇主时点受签证影响，需单独确认，不能默默假设</td></tr>
+      <tr data-page-node-id="iyw3aqquxhabBjEaYqVsU5"><td data-page-node-id="Tt7pi1lCehA3mPYxtvquiL">奖金口径（1-3 月不固定）</td><td data-page-node-id="ISXMZoE1XGI2JYWDSTVlWA">待核</td><td data-page-node-id="FJcnKn5LoXgitWQwn1uN4A">谈判时奖金是变量，目标薪资按「总包」谈而非只看月薪</td></tr>
+      <tr data-page-node-id="rsjadec3jX4iQB3Pvj5UtC"><td data-page-node-id="3QCmIawzttZcvRnMuRmHYb">NAV 独立计算 vs 复核</td><td data-page-node-id="41g3Xl7v5Zf802hEanAlHT">已明确</td><td data-page-node-id="wvTEQSehu5FwGHFl22Kstl">你是复核，写简历/面试不能写成独立计算</td></tr>
+      <tr data-page-node-id="v5RGHAWDE3Et59lCVNYk0K"><td data-page-node-id="NZT6jcXQAIH5gBp2VhivhB">职级映射（小平台 vs 大机构）</td><td data-page-node-id="cJEOKCJZ3e2BRFQkz6G6WR">待核</td><td data-page-node-id="QgZm5psowoyHYiXXX3VCxd">现职「运营分析师（AI 方向）」头衔在市场上无对应，需用职责而非头衔对标</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- 08 附录 -->
+<section data-page-node-id="TyOdurSapDYxtGuFckHGgN">
+  <h2 class="sec" data-page-node-id="x1Z7o0MvzCEBCgaAFYMX9j"><span class="no" data-page-node-id="Wc9xcrd5eu3kLcvcW2jGi0">08</span>附录：口径与来源</h2>
+  <div class="foot" data-page-node-id="9NJG6fwvz87uNZmzzySC5H">
+    <p data-page-node-id="DrhAFt3gh0WdXpEO4nGOL5"><b data-page-node-id="mafYHDC2edmAKDzPASU1nx">数据来源：</b>① JobsDB 香港 281 条岗位详情（2026-10-25 采集，159 条可解析薪资，统一换算港元月薪）；② 304 人合格样本（公开职业履历）；③ 234 人公开履历样本与职业阶梯结论。</p>
+    <p data-page-node-id="c7DOHtuoHLPGpSXsyslxZB"><b data-page-node-id="45cFswoBbEnEwO0dHhQKkD">口径声明：</b>薪资是 JD 标注区间的归并，不是统计分位；人物样本偏资深，存在便利样本偏差；「到管理岗年数」只统计已到达者，真实门槛只会更高。所有推测已标「待核」。</p>
+    <p data-page-node-id="rxcDNuFRB0Eh9qzXbTf61S"><b data-page-node-id="Nqe2d3JBIDB9gqo2fYLxNa">路径打标签口径：</b>149 条正常薪资按岗位标题关键词归入 P1-P5 或「无关/出局」。RO 持牌负责人、销售/财富/交易/投资线、秘书司机客服等已单独剔除（共 108 条）。P1=29 条、P4=8 条样本充分；P2/P3/P5 样本 0-2 条，其分位数仅供参考。完整映射见 path_bands.json。</p>
+    <p data-page-node-id="CePd6IglhglFRVZWrH0XFF"><b data-page-node-id="K557uhTjuD4OQar4prVcEG">与既有成果的差异：</b>本报告独立生成，未沿用既有 Career_Research_Report.html 的内容与结构；人物轨迹部分与 304 人研究同源，但结论按本报告口径重新计算。</p>
+    <p data-page-node-id="G8vYp7HniqdppwsD0KUGNg"><b data-page-node-id="r02u2QcRaAt8ZB2MQaVxYR">异常值处理：</b>10 条异常薪资（高管级误标/占位）已剔除出薪酬阶梯，原始值保留在 salary_rows 可复核。</p>
+    <p data-page-node-id="W2r6FYO5nvlnK9QsufFjcM">生成时间：2026-10-25。个人信息仅用于本次分析。</p>
+  </div>
+</section>
+
+</div>
+</body>
+</html>
