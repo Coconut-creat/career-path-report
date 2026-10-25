@@ -84,6 +84,22 @@ th{ color:var(--secondary); font-weight:600; font-size:13px; background:var(--bg
   .path .dims{grid-template-columns:repeat(3,1fr);} .hero h1{font-size:30px;}
 }
 @media print{ .chart,.card,.path,.phase{box-shadow:none;} }
+/* 交互式雷达图组件 */
+.radar-wrap{ display:flex; flex-wrap:wrap; gap:20px; align-items:flex-start; }
+.radar-main{ flex:1 1 380px; min-width:320px; }
+.radar-legend{ flex:0 0 240px; display:flex; flex-direction:column; gap:8px; }
+.radar-legend .lg{ display:flex; align-items:center; gap:8px; padding:8px 10px; border:1px solid var(--line);
+  border-radius:8px; cursor:pointer; font-size:13px; color:var(--secondary); transition:.15s;
+  user-select:none; background:var(--surface); }
+.radar-legend .lg:hover{ border-color:var(--accent); color:var(--text); }
+.radar-legend .lg.on{ color:var(--text); border-color:currentColor; background:var(--bg); }
+.radar-legend .lg .dot{ width:12px; height:12px; border-radius:50%; flex-shrink:0; }
+.radar-legend .lg .sc{ margin-left:auto; font-weight:700; color:var(--text); }
+.radar-legend .btn-all{ margin-top:4px; padding:8px; border:1px dashed var(--line); border-radius:8px;
+  cursor:pointer; font-size:12.5px; color:var(--secondary); text-align:center; background:transparent; }
+.radar-legend .btn-all:hover{ color:var(--accent); border-color:var(--accent); }
+.radar-tip{ font-size:12.5px; color:var(--secondary); margin-top:8px; }
+@media (max-width:760px){ .radar-legend{ flex:1 1 100%; order:2; } .radar-main{ order:1; } }
 </style>
 </head>
 <body>
@@ -458,9 +474,139 @@ th{ color:var(--secondary); font-weight:600; font-size:13px; background:var(--bg
   <p class="note"><span class="flag">⚠</span> 「探索性」「节奏/反馈」是 <b>v3 新增的量化子分</b>（替换原「适配」单值）：探索性 = JD 技术词密度（纯数据），节奏/反馈 = 结构判断 + JD 词命中佐证（半定量）。二者是<b>相对分</b>，只用于比较路径之间的相对高低，绝对值勿当真；P2/P3/P5 样本少（0-2 条），其探索性分存在锚点/缺失，已在依据里标注。</p>
 
   <div class="chart">
-    <h4>主线路径（P1 基金运营纵深）六维雷达</h4>
-    <svg viewBox='0 0 300 300' style='width:100%;max-width:320px;display:block;margin:0 auto'><polygon points='150.0,117.0 181.4,139.8 169.4,176.7 130.6,176.7 118.6,139.8' fill='none' stroke='var(--line)' stroke-width='1'/><polygon points='150.0,84.0 212.8,129.6 188.8,203.4 111.2,203.4 87.2,129.6' fill='none' stroke='var(--line)' stroke-width='1'/><polygon points='150.0,50.0 245.1,119.1 208.8,230.9 91.2,230.9 54.9,119.1' fill='none' stroke='var(--line)' stroke-width='1'/><line x1='150' y1='150' x2='150.0' y2='50.0' stroke='var(--line)' stroke-width='1'/><line x1='150' y1='150' x2='245.1' y2='119.1' stroke='var(--line)' stroke-width='1'/><line x1='150' y1='150' x2='208.8' y2='230.9' stroke='var(--line)' stroke-width='1'/><line x1='150' y1='150' x2='91.2' y2='230.9' stroke='var(--line)' stroke-width='1'/><line x1='150' y1='150' x2='54.9' y2='119.1' stroke='var(--line)' stroke-width='1'/><polygon points='150.0,66.0 228.0,124.7 190.0,205.0 114.7,198.5 112.0,137.6' fill='var(--accent)' fill-opacity='0.25' stroke='var(--accent)' stroke-width='2'/><text x='150.0' y='28.0' text-anchor='middle' font-size='11' fill='var(--secondary)'>保值率 84</text><text x='266.0' y='112.3' text-anchor='middle' font-size='11' fill='var(--secondary)'>可行性 82</text><text x='221.7' y='248.7' text-anchor='middle' font-size='11' fill='var(--secondary)'>天花板 68</text><text x='78.3' y='248.7' text-anchor='middle' font-size='11' fill='var(--secondary)'>期权 60</text><text x='34.0' y='112.3' text-anchor='middle' font-size='11' fill='var(--secondary)'>适配 40</text></svg>
-    <p class="note">看形状不看大小：P1 无短板（五维均衡），是「可立即执行」的主线。P2 的探索/节奏/期权最高但可行性最低，是「第二曲线」而非主线——<b>但新评分下 P1 与 P2 复合分已咬得很近（差 1.8 分）</b>，本质是「最稳（P1）vs 最爽（P2）」的取舍，而非谁明显胜出。</p>
+    <h4>六条路径六维雷达 · 交互对比（点击图例切换 / hover 高亮）</h4>
+    <div class="radar-wrap">
+  <div class="radar-main">
+    <svg id="radar-svg" viewBox="0 0 460 460" style="width:100%;max-width:460px;display:block;margin:0 auto"></svg>
+  </div>
+  <div class="radar-legend" id="radar-legend"></div>
+</div>
+<div class="radar-tip">点击左侧路径可单独查看 / 再次点击取消；把鼠标悬停在雷达图上可高亮对应路径。默认全部叠加，便于一眼对比形状差异。</div>
+<script>
+(function(){
+  var dims = ["保值率", "可行性", "天花板", "期权", "探索性", "节奏·反馈"];
+  var data = [{"id": "P1", "name": "基金运营纵深（Fund Operations）", "score": 74, "vals": [84, 82, 68, 60, 44, 37]}, {"id": "P2", "name": "流程自动化/金融科技（Automation × FinTech）", "score": 72, "vals": [72, 55, 75, 85, 100, 84]}, {"id": "P3", "name": "产品与基金设立（Product & Fund Setup）", "score": 63, "vals": [66, 58, 72, 65, 36, 61]}, {"id": "P4", "name": "风险/交易支持（Risk / Trade Support）", "score": 59, "vals": [55, 50, 78, 70, 36, 57]}, {"id": "P5", "name": "金融业务分析/实施（Finance BA / Implementation）", "score": 56, "vals": [50, 45, 70, 65, 0, 70]}, {"id": "P7", "name": "机构业务/客户关系/销售支持（非零售推销）", "score": 56, "vals": [48, 55, 70, 55, 40, 80]}];
+  var colors = ["#157d80", "#ad9464", "#3d6aa2", "#8a5aa0", "#b85555", "#5a7d3d"];
+  var colorsDark = ["#3fb4b8", "#c9b079", "#6d9ad0", "#b287c4", "#d07878", "#8fb86a"];
+  var isDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  function col(i){ return isDark ? colorsDark[i] : colors[i]; }
+  var active = data.map(function(){ return true; });  // 默认全显
+  var hover = -1;
+
+  var svg = document.getElementById('radar-svg');
+  var legend = document.getElementById('radar-legend');
+
+  // 网格 + 标签（静态背景）
+  var NS = 'http://www.w3.org/2000/svg';
+  var cx = 230, cy = 230, R = 150, n = dims.length;
+  function pt(i, r){
+    var ang = -Math.PI/2 + i * 2*Math.PI/n;
+    return [cx + r*Math.cos(ang), cy + r*Math.sin(ang)];
+  }
+  var bg = document.createElementNS(NS, 'g');
+  var lineCol = isDark ? '#2c2e34' : '#e3e1da';
+  var secCol = isDark ? '#8b95a6' : '#728094';
+  for (var ring=1; ring<=4; ring++){
+    var pts = [];
+    for (var i=0;i<n;i++){ var p=pt(i, R*ring/4); pts.push(p[0].toFixed(1)+','+p[1].toFixed(1)); }
+    var poly = document.createElementNS(NS,'polygon');
+    poly.setAttribute('points', pts.join(' '));
+    poly.setAttribute('fill','none'); poly.setAttribute('stroke', lineCol); poly.setAttribute('stroke-width','1');
+    bg.appendChild(poly);
+  }
+  for (var i=0;i<n;i++){
+    var p = pt(i, R);
+    var ln = document.createElementNS(NS,'line');
+    ln.setAttribute('x1',cx); ln.setAttribute('y1',cy); ln.setAttribute('x2',p[0]); ln.setAttribute('y2',p[1]);
+    ln.setAttribute('stroke', lineCol); ln.setAttribute('stroke-width','1');
+    bg.appendChild(ln);
+    var lp = pt(i, R+28);
+    var t = document.createElementNS(NS,'text');
+    t.setAttribute('x', lp[0]); t.setAttribute('y', lp[1]);
+    t.setAttribute('text-anchor','middle'); t.setAttribute('font-size','12'); t.setAttribute('fill', secCol);
+    t.textContent = dims[i];
+    bg.appendChild(t);
+  }
+  svg.appendChild(bg);
+
+  // 数据层（动态重绘）
+  var layer = document.createElementNS(NS,'g');
+  svg.appendChild(layer);
+
+  function draw(){
+    while(layer.firstChild) layer.removeChild(layer.firstChild);
+    var shown = data.filter(function(_,idx){ return active[idx]; });
+    data.forEach(function(d, idx){
+      if(!active[idx]) return;
+      var vals = d.vals;
+      var pts = [];
+      for(var i=0;i<n;i++){ var p = pt(i, R*vals[i]/100); pts.push(p[0].toFixed(1)+','+p[1].toFixed(1)); }
+      var poly = document.createElementNS(NS,'polygon');
+      poly.setAttribute('points', pts.join(' '));
+      var isHov = (hover === idx) || (shown.length === 1);
+      var op = (hover >= 0 && hover !== idx && shown.length > 1) ? 0.08 : 0.28;
+      var sw = isHov ? 3 : 2;
+      poly.setAttribute('fill', col(idx));
+      poly.setAttribute('fill-opacity', op);
+      poly.setAttribute('stroke', col(idx));
+      poly.setAttribute('stroke-width', sw);
+      poly.style.transition = 'fill-opacity .2s, stroke-width .2s';
+      poly.style.cursor = 'pointer';
+      poly.addEventListener('mouseenter', function(){ hover = idx; draw(); });
+      poly.addEventListener('mouseleave', function(){ hover = -1; draw(); });
+      poly.addEventListener('click', function(){ active[idx] = !active[idx]; renderLegend(); draw(); });
+      layer.appendChild(poly);
+      // 顶点数值
+      for(var i=0;i<n;i++){
+        var p = pt(i, R*vals[i]/100);
+        var dot = document.createElementNS(NS,'circle');
+        dot.setAttribute('cx', p[0]); dot.setAttribute('cy', p[1]); dot.setAttribute('r', 2.6);
+        dot.setAttribute('fill', col(idx));
+        dot.style.opacity = (hover>=0 && hover!==idx && shown.length>1) ? 0.15 : 0.9;
+        layer.appendChild(dot);
+      }
+    });
+  }
+
+  function renderLegend(){
+    legend.innerHTML = '';
+    data.forEach(function(d, idx){
+      var div = document.createElement('div');
+      div.className = 'lg' + (active[idx] ? ' on' : '');
+      var dot = document.createElement('span'); dot.className = 'dot'; dot.style.background = col(idx);
+      var name = document.createElement('span'); name.textContent = d.id + ' ' + d.name;
+      var sc = document.createElement('span'); sc.className = 'sc'; sc.textContent = d.score;
+      div.appendChild(dot); div.appendChild(name); div.appendChild(sc);
+      div.addEventListener('click', function(){
+        // 点击：切换该路径显隐
+        active[idx] = !active[idx];
+        renderLegend(); draw();
+      });
+      div.addEventListener('mouseenter', function(){ hover = idx; draw(); });
+      div.addEventListener('mouseleave', function(){ hover = -1; draw(); });
+      legend.appendChild(div);
+    });
+    var btn = document.createElement('div');
+    btn.className = 'btn-all';
+    btn.textContent = '全部显示 / 全部隐藏';
+    btn.addEventListener('click', function(){
+      var anyOn = active.some(function(a){ return a; });
+      active = active.map(function(){ return !anyOn; });
+      renderLegend(); draw();
+    });
+    legend.appendChild(btn);
+  }
+
+  renderLegend();
+  draw();
+})();
+</script>
+    <p class="note">看形状不看大小，重点对比<b>各路径的「长短板」而非总分</b>：
+      <b>P1</b> 六维均衡无短板，是「可立即执行」的主线；
+      <b>P2</b> 探索性/节奏/期权顶格但可行性最低（第二曲线）；
+      <b>P3/P4</b> 探索性偏低、天花板尚可；
+      <b>P5/P7</b> 节奏高但保值率临界（P5 探索性样本缺失记 0，仅示意）。
+      复合分已咬得很近——本质是「最稳 P1 vs 最爽 P2」的取舍，而非谁明显胜出。</p>
   </div>
 
   <div class="chart">
